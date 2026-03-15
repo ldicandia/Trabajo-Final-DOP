@@ -1,4 +1,4 @@
-package org.example.schemas;
+package org.pod.schemas;
 
 import java.time.Instant;
 

@@ -1,11 +1,11 @@
-package org.example;
+package org.pod;
 
-import org.example.domain.WeatherEvent;
-import org.example.domain.UnifiedEvent;
-import org.example.pipeline.EventRefinery;
-import org.example.schemas.RawEventV1;
-import org.example.schemas.RawEventV15;
-import org.example.schemas.RawEventV2;
+import org.pod.domain.WeatherEvent;
+import org.pod.domain.UnifiedEvent;
+import org.pod.pipeline.EventRefinery;
+import org.pod.schemas.RawEventV1;
+import org.pod.schemas.RawEventV15;
+import org.pod.schemas.RawEventV2;
 import org.junit.jupiter.api.Test;
 
 import java.time.Instant;

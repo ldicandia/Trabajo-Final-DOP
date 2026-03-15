@@ -1,4 +1,4 @@
-package org.example.domain;
+package org.pod.domain;
 
 import java.time.Instant;
 

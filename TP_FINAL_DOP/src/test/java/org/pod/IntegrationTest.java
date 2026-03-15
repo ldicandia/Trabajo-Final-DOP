@@ -1,14 +1,14 @@
-package org.example;
+package org.pod;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import org.example.analytics.AnalyticsEngine;
-import org.example.analytics.AnalyticsReport;
-import org.example.pipeline.EventRefinery;
-import org.example.schemas.RawEvent;
-import org.example.schemas.RawEventDeserializer;
+import org.pod.analytics.AnalyticsEngine;
+import org.pod.analytics.AnalyticsReport;
+import org.pod.pipeline.EventRefinery;
+import org.pod.schemas.RawEvent;
+import org.pod.schemas.RawEventDeserializer;
 import org.junit.jupiter.api.Test;
 
 import java.io.InputStream;

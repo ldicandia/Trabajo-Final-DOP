@@ -1,4 +1,4 @@
-package org.example.schemas;
+package org.pod.schemas;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;

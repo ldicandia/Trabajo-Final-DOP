@@ -1,9 +1,9 @@
-package org.example;
+package org.pod;
 
-import org.example.analytics.AnalyticsEngine;
-import org.example.analytics.AnalyticsReport;
-import org.example.pipeline.EventRefinery;
-import org.example.schemas.RawEventV2;
+import org.pod.analytics.AnalyticsEngine;
+import org.pod.analytics.AnalyticsReport;
+import org.pod.pipeline.EventRefinery;
+import org.pod.schemas.RawEventV2;
 import org.junit.jupiter.api.Test;
 
 import java.time.Instant;

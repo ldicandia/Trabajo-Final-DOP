@@ -1,14 +1,14 @@
-package org.example.analytics;
+package org.pod.analytics;
 
-import org.example.domain.ReportEvent;
-import org.example.domain.TrafficEvent;
-import org.example.domain.UnifiedEvent;
-import org.example.domain.WeatherEvent;
-import org.example.pipeline.EventRefinery;
-import org.example.schemas.RawEvent;
-import org.example.schemas.RawEventV1;
-import org.example.schemas.RawEventV15;
-import org.example.schemas.RawEventV2;
+import org.pod.domain.ReportEvent;
+import org.pod.domain.TrafficEvent;
+import org.pod.domain.UnifiedEvent;
+import org.pod.domain.WeatherEvent;
+import org.pod.pipeline.EventRefinery;
+import org.pod.schemas.RawEvent;
+import org.pod.schemas.RawEventV1;
+import org.pod.schemas.RawEventV15;
+import org.pod.schemas.RawEventV2;
 
 import java.util.List;
 import java.util.Map;

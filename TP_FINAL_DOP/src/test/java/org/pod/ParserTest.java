@@ -1,17 +1,16 @@
-package org.example;
+package org.pod;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import org.example.domain.TrafficEvent;
-import org.example.domain.UnifiedEvent;
-import org.example.domain.WeatherEvent;
-import org.example.pipeline.EventRefinery;
-import org.example.schemas.RawEvent;
-import org.example.schemas.RawEventDeserializer;
-import org.example.schemas.RawEventV1;
-import org.example.schemas.RawEventV15;
-import org.example.schemas.RawEventV2;
+import org.pod.domain.TrafficEvent;
+import org.pod.domain.UnifiedEvent;
+import org.pod.domain.WeatherEvent;
+import org.pod.pipeline.EventRefinery;
+import org.pod.schemas.RawEvent;
+import org.pod.schemas.RawEventDeserializer;
+import org.pod.schemas.RawEventV1;
+import org.pod.schemas.RawEventV15;
 import org.junit.jupiter.api.Test;
 
 import java.time.Instant;

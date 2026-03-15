@@ -1,4 +1,4 @@
-package org.example.analytics;
+package org.pod.analytics;
 
 import java.util.Map;
 

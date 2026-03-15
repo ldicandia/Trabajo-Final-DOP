@@ -1,13 +1,13 @@
-package org.example;
+package org.pod;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import org.example.analytics.AnalyticsEngine;
-import org.example.analytics.AnalyticsReport;
-import org.example.pipeline.EventRefinery;
-import org.example.schemas.RawEvent;
+import org.pod.analytics.AnalyticsEngine;
+import org.pod.analytics.AnalyticsReport;
+import org.pod.pipeline.EventRefinery;
+import org.pod.schemas.RawEvent;
 
 import java.io.File;
 import java.util.List;
@@ -20,7 +20,7 @@ public class Main {
                 .registerModule(new JavaTimeModule());
         
         SimpleModule module = new SimpleModule();
-        module.addDeserializer(RawEvent.class, new org.example.schemas.RawEventDeserializer());
+        module.addDeserializer(RawEvent.class, new org.pod.schemas.RawEventDeserializer());
         mapper.registerModule(module);
         
 
