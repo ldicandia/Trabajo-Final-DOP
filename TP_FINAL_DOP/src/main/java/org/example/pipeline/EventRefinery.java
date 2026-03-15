@@ -22,86 +22,60 @@ public class EventRefinery {
         };
     }
 
+    private <T extends UnifiedEvent> Optional<T> tryBuild(java.util.function.Supplier<T> builder) {
+        try {
+            return Optional.of(builder.get());
+        } catch (Exception e) {
+            return Optional.empty();
+        }
+    }
+
     private Optional<UnifiedEvent> parseV1(RawEventV1 v1) {
-        String id = v1.id();
-        Instant timestamp = v1.timestamp();
-        var payload = v1.PAYLOAD();
-
-        if (payload == null) return Optional.empty();
-
-        return switch (v1.TYPE().toUpperCase()) {
-            case "TRF" -> {
-                if (payload.SPD() == null || payload.LNE() == null) yield Optional.empty();
-                if (payload.SPD() < 0 || payload.SPD() > 250) yield Optional.empty();
-                yield Optional.of(new TrafficEvent(id, timestamp, payload.SPD(), payload.LNE()));
-            }
-            case "WTH" -> {
-                if (payload.T() == null) yield Optional.empty();
-                double tempC = (payload.T() - 32) * 5 / 9.0;
-                yield Optional.of(new WeatherEvent(id, timestamp, tempC, payload.H()));
-            }
-            case "REPORT" -> {
-                if (payload.CAT() == null || payload.DESC() == null) yield Optional.empty();
-                yield Optional.of(new ReportEvent(id, timestamp, payload.CAT(), "UNKNOWN", payload.DESC()));
-            }
-            default -> Optional.empty();
-        };
+        return Optional.ofNullable(v1.TYPE())
+            .map(String::toUpperCase)
+            .flatMap(type -> Optional.ofNullable(v1.PAYLOAD())
+                .flatMap(payload -> switch (type) {
+                    case "TRF" -> tryBuild(() -> new TrafficEvent(v1.id(), v1.timestamp(), payload.SPD(), payload.LNE()));
+                    case "WTH" -> tryBuild(() -> new WeatherEvent(v1.id(), v1.timestamp(), (payload.T() - 32) * 5 / 9.0, payload.H()));
+                    case "REPORT" -> tryBuild(() -> new ReportEvent(v1.id(), v1.timestamp(), payload.CAT(), "UNKNOWN", payload.DESC()));
+                    default -> Optional.empty();
+                }));
     }
 
     private Optional<UnifiedEvent> parseV15(RawEventV15 v15) {
-        String id = v15.id();
-        Instant timestamp = v15.timestamp();
-        var attr = v15.attributes();
-
-        return switch (v15.kind().toLowerCase()) {
-            case "traffic" -> {
-                if (v15.velocity() == null) yield Optional.empty();
-                if (v15.velocity() < 0 || v15.velocity() > 250) yield Optional.empty();
-                
-                int lane = 0;
-                if (attr != null && attr.lane_id() != null) {
-                    try {
-                        lane = Integer.parseInt(attr.lane_id().replace("L-", ""));
-                    } catch (NumberFormatException ignored) {}
-                }
-                yield Optional.of(new TrafficEvent(id, timestamp, v15.velocity(), lane));
-            }
-            case "weather" -> {
-                if (v15.temp_c() == null) yield Optional.empty();
-                Double humidity = attr != null ? attr.HUMIDITY() : null;
-                yield Optional.of(new WeatherEvent(id, timestamp, v15.temp_c(), humidity));
-            }
-            case "report" -> {
-                if (v15.category() == null) yield Optional.empty();
-                String severity = attr != null && attr.severity() != null ? attr.severity() : "UNKNOWN";
-                String area = attr != null && attr.area() != null ? attr.area() : "";
-                yield Optional.of(new ReportEvent(id, timestamp, v15.category(), severity, area));
-            }
-            default -> Optional.empty();
-        };
+        return Optional.ofNullable(v15.kind())
+            .map(String::toLowerCase)
+            .flatMap(kind -> switch (kind) {
+                case "traffic" -> tryBuild(() -> new TrafficEvent(
+                        v15.id(), v15.timestamp(), v15.velocity(),
+                        Optional.ofNullable(v15.attributes())
+                                .map(RawEventV15.Attributes::lane_id)
+                                .map(l -> l.replace("L-", ""))
+                                .map(Integer::parseInt)
+                                .orElse(0)
+                ));
+                case "weather" -> tryBuild(() -> new WeatherEvent(
+                        v15.id(), v15.timestamp(), v15.temp_c(), 
+                        Optional.ofNullable(v15.attributes()).map(RawEventV15.Attributes::HUMIDITY).orElse(null)
+                ));
+                case "report" -> tryBuild(() -> new ReportEvent(
+                        v15.id(), v15.timestamp(), v15.category(),
+                        Optional.ofNullable(v15.attributes()).map(RawEventV15.Attributes::severity).orElse("UNKNOWN"),
+                        Optional.ofNullable(v15.attributes()).map(RawEventV15.Attributes::area).orElse("")
+                ));
+                default -> Optional.empty();
+            });
     }
 
     private Optional<UnifiedEvent> parseV2(RawEventV2 v2) {
-        String id = v2.id();
-        Instant timestamp = v2.timestamp();
-        var data = v2.data();
-        if (data == null) return Optional.empty();
-
-        return switch (v2.eventType().toUpperCase()) {
-            case "TRAFFIC" -> {
-                if (data.speedKmh() == null || data.lane() == null) yield Optional.empty();
-                if (data.speedKmh() < 0 || data.speedKmh() > 250) yield Optional.empty();
-                yield Optional.of(new TrafficEvent(id, timestamp, data.speedKmh(), data.lane()));
-            }
-            case "WEATHER" -> {
-                if (data.temperature() == null) yield Optional.empty();
-                yield Optional.of(new WeatherEvent(id, timestamp, data.temperature(), data.humidity()));
-            }
-            case "REPORT" -> {
-                if (data.category() == null || data.status() == null) yield Optional.empty();
-                yield Optional.of(new ReportEvent(id, timestamp, data.category(), data.status(), ""));
-            }
-            default -> Optional.empty();
-        };
+        return Optional.ofNullable(v2.eventType())
+            .map(String::toUpperCase)
+            .flatMap(type -> Optional.ofNullable(v2.data())
+                .flatMap(data -> switch (type) {
+                    case "TRAFFIC" -> tryBuild(() -> new TrafficEvent(v2.id(), v2.timestamp(), data.speedKmh(), data.lane()));
+                    case "WEATHER" -> tryBuild(() -> new WeatherEvent(v2.id(), v2.timestamp(), data.temperature(), data.humidity()));
+                    case "REPORT" -> tryBuild(() -> new ReportEvent(v2.id(), v2.timestamp(), data.category(), data.status(), ""));
+                    default -> Optional.empty();
+                }));
     }
 }

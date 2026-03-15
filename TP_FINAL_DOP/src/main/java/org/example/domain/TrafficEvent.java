@@ -1,6 +1,7 @@
 package org.example.domain;
 
 import java.time.Instant;
+import java.util.Objects;
 
 public record TrafficEvent(
         String id,
@@ -8,4 +9,11 @@ public record TrafficEvent(
         double speedKmh,
         int lane
 ) implements UnifiedEvent {
+    public TrafficEvent {
+        Objects.requireNonNull(id);
+        Objects.requireNonNull(timestamp);
+        if (speedKmh < 0 || speedKmh > 250) {
+            throw new IllegalArgumentException("Invalid speed amount");
+        }
+    }
 }

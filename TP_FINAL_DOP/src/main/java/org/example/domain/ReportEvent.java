@@ -1,6 +1,7 @@
 package org.example.domain;
 
 import java.time.Instant;
+import java.util.Objects;
 
 public record ReportEvent(
         String id,
@@ -9,4 +10,11 @@ public record ReportEvent(
         String severity,
         String description
 ) implements UnifiedEvent {
+    public ReportEvent {
+        Objects.requireNonNull(id);
+        Objects.requireNonNull(timestamp);
+        Objects.requireNonNull(category);
+        Objects.requireNonNull(severity);
+        Objects.requireNonNull(description);
+    }
 }
