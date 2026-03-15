@@ -12,5 +12,11 @@ public record WeatherEvent(
     public WeatherEvent {
         Objects.requireNonNull(id);
         Objects.requireNonNull(timestamp);
+        if (temperatureC < -90 || temperatureC > 60) {
+            throw new IllegalArgumentException("Temperature out of range: " + temperatureC);
+        }
+        if (humidity != null && (humidity < 0 || humidity > 100)) {
+            throw new IllegalArgumentException("Humidity out of range: " + humidity);
+        }
     }
 }

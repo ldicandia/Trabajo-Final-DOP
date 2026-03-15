@@ -1,0 +1,113 @@
+[
+    {
+        "id": "A1B2C3D4",
+        "timestamp": "2026-03-04T10:00:00Z",
+        "SCHEMA_VER": "1.0",
+        "TYPE": "TRF",
+        "PAYLOAD": { "SPD": 65.5, "LNE": 1 }
+    },
+    {
+        "id": "e5f6g7h8",
+        "timestamp": "2026-03-04T10:05:00Z",
+        "version": 1.5,
+        "kind": "traffic",
+        "velocity": 120.0,
+        "attributes": { "lane_id": "L-2" }
+    },
+    {
+        "schemaVersion": "2.0",
+        "id": "9A8B7C6D",
+        "timestamp": "2026-03-04T10:10:00Z",
+        "eventType": "TRAFFIC",
+        "data": { "speedKmh": 45.0, "lane": 3 }
+    },
+    {
+        "id": "B1B1B1B1",
+        "timestamp": "2026-03-04T10:15:00Z",
+        "SCHEMA_VER": "1.0",
+        "TYPE": "WTH",
+        "PAYLOAD": { "T": 95.0, "H": 40.0 }
+    },
+    {
+        "id": "c2c2c2c2",
+        "timestamp": "2026-03-04T10:20:00Z",
+        "version": 1.5,
+        "kind": "weather",
+        "temp_c": 32.5,
+        "attributes": { "HUMIDITY": 85.0 }
+    },
+    {
+        "id": "D3D3D3D3",
+        "timestamp": "2026-03-04T10:25:00Z",
+        "schemaVersion": "2.0",
+        "eventType": "WEATHER",
+        "data": { "temperature": 15.0, "humidity": 120.0 }
+    },
+    {
+        "id": "E4E4E4E4",
+        "timestamp": "2026-03-04T10:30:00Z",
+        "SCHEMA_VER": "1.0",
+        "TYPE": "TRF",
+        "PAYLOAD": { "SPD": 350.0, "LNE": 2 }
+    },
+    {
+        "id": "f5f5f5f5",
+        "timestamp": "2026-03-04T10:35:00Z",
+        "version": 1.5,
+        "kind": "report",
+        "category": "Pothole",
+        "attributes": { "severity": "High" }
+    },
+    {
+        "id": "G6G6G6G6",
+        "timestamp": "2026-03-04T10:40:00Z",
+        "schemaVersion": "2.0",
+        "eventType": "REPORT",
+        "data": { "category": "TRAFFIC_LIGHT", "status": "BROKEN" }
+    },
+    {
+        "id": "h7h7h7h7",
+        "timestamp": "2026-03-04T10:45:00Z",
+        "SCHEMA_VER": "1.0",
+        "TYPE": "WTH",
+        "PAYLOAD": { "T": 10.0, "H": null }
+    },
+    {
+        "id": "I8I8I8I8",
+        "timestamp": "2026-03-04T10:50:00Z",
+        "version": 1.5,
+        "kind": "traffic",
+        "velocity": null,
+        "attributes": { "lane_id": "L-1" }
+    },
+    {
+        "id": "J9J9J9J9",
+        "timestamp": "2026-03-04T10:55:00Z",
+        "SCHEMA_VER": "1.0",
+        "TYPE": "REPORT",
+        "PAYLOAD": { "CAT": "pothole", "DESC": "Big hole in the middle of the street" }
+    },
+    {
+        "id": "k10k10k10",
+        "timestamp": "2026-03-04T11:00:00Z",
+        "version": 1.5,
+        "kind": "weather",
+        "temp_c": 45.0,
+        "attributes": { "HUMIDITY": 10.0 }
+    },
+    {
+        "id": "L11L11L11",
+        "timestamp": "2026-03-04T11:05:00Z",
+        "schemaVersion": "2.0",
+        "eventType": "TRAFFIC",
+        "data": { "speedKmh": 115.0, "lane": 4 }
+    },
+    {
+        "id": "m12m12m12",
+        "timestamp": "2026-03-04T11:10:00Z",
+        "version": 1.5,
+        "kind": "report",
+        "category": "STREET_CLEAN",
+        "attributes": { "area": "North" }
+    }
+]

@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.domain.WeatherEvent;
 import org.example.domain.UnifiedEvent;
 import org.example.pipeline.EventRefinery;
 import org.example.schemas.RawEventV1;
@@ -10,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import java.time.Instant;
 import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ValidationTest {
@@ -57,5 +59,65 @@ class ValidationTest {
                 new RawEventV2.Data(null, null, null, null, null, "BROKEN")
         );
         assertTrue(refinery.refine(v2).isEmpty());
+    }
+
+    @Test
+    void testHumidityOverOneHundredDiscarded() {
+        RawEventV2 v2 = new RawEventV2(
+                "2.0", "humid", Instant.now(), "WEATHER",
+                new RawEventV2.Data(null, null, 20.0, 120.0, null, null)
+        );
+        assertTrue(refinery.refine(v2).isEmpty(), "Humidity > 100 should be discarded");
+    }
+
+    @Test
+    void testNegativeHumidityDiscarded() {
+        RawEventV2 v2 = new RawEventV2(
+                "2.0", "neghumid", Instant.now(), "WEATHER",
+                new RawEventV2.Data(null, null, 20.0, -5.0, null, null)
+        );
+        assertTrue(refinery.refine(v2).isEmpty(), "Negative humidity should be discarded");
+    }
+
+    @Test
+    void testExtremeHighTemperatureDiscarded() {
+        RawEventV15 v15 = new RawEventV15(
+                "hightemp", Instant.now(), 1.5, "weather", null, 999.0, null, null
+        );
+        assertTrue(refinery.refine(v15).isEmpty(), "Temp > 60 should be discarded");
+    }
+
+    @Test
+    void testExtremeLowTemperatureDiscarded() {
+        RawEventV15 v15 = new RawEventV15(
+                "lowtemp", Instant.now(), 1.5, "weather", null, -100.0, null, null
+        );
+        assertTrue(refinery.refine(v15).isEmpty(), "Temp < -90 should be discarded");
+    }
+
+    @Test
+    void testV1FreezingPointConversion() {
+        // 32°F should convert to exactly 0°C
+        RawEventV1 v1 = new RawEventV1(
+                "freeze", Instant.now(), "1.0", "WTH",
+                new RawEventV1.Payload(null, null, 32.0, 50.0, null, null)
+        );
+        Optional<UnifiedEvent> result = refinery.refine(v1);
+        assertTrue(result.isPresent());
+        WeatherEvent w = (WeatherEvent) result.get();
+        assertEquals(0.0, w.temperatureC(), 0.01, "32°F should be 0°C");
+    }
+
+    @Test
+    void testV1NegativeFahrenheitConversion() {
+        // -40°F should convert to -40°C (the crossover point)
+        RawEventV1 v1 = new RawEventV1(
+                "crossover", Instant.now(), "1.0", "WTH",
+                new RawEventV1.Payload(null, null, -40.0, 50.0, null, null)
+        );
+        Optional<UnifiedEvent> result = refinery.refine(v1);
+        assertTrue(result.isPresent());
+        WeatherEvent w = (WeatherEvent) result.get();
+        assertEquals(-40.0, w.temperatureC(), 0.01, "-40°F should be -40°C");
     }
 }

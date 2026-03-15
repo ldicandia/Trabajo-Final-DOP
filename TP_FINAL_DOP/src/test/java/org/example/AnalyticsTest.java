@@ -31,4 +31,37 @@ class AnalyticsTest {
         assertEquals(1, report.totalCriticalEvents());
         assertEquals(3, report.schemaDistribution().get("V2.0"));
     }
+
+    @Test
+    void testCriticalSeverePothole() {
+        AnalyticsEngine engine = new AnalyticsEngine(new EventRefinery());
+
+        RawEventV2 pothole = new RawEventV2("2.0", "pot1", Instant.now(), "REPORT",
+                new RawEventV2.Data(null, null, null, null, "Pothole", "HIGH"));
+
+        AnalyticsReport report = engine.analyze(List.of(pothole));
+        assertEquals(1, report.totalCriticalEvents(), "Severe pothole should be critical");
+    }
+
+    @Test
+    void testCriticalBrokenTrafficLight() {
+        AnalyticsEngine engine = new AnalyticsEngine(new EventRefinery());
+
+        RawEventV2 light = new RawEventV2("2.0", "light1", Instant.now(), "REPORT",
+                new RawEventV2.Data(null, null, null, null, "TRAFFIC_LIGHT", "BROKEN"));
+
+        AnalyticsReport report = engine.analyze(List.of(light));
+        assertEquals(1, report.totalCriticalEvents(), "Broken traffic light should be critical");
+    }
+
+    @Test
+    void testNonCriticalLowSeverityPothole() {
+        AnalyticsEngine engine = new AnalyticsEngine(new EventRefinery());
+
+        RawEventV2 pothole = new RawEventV2("2.0", "pot2", Instant.now(), "REPORT",
+                new RawEventV2.Data(null, null, null, null, "Pothole", "LOW"));
+
+        AnalyticsReport report = engine.analyze(List.of(pothole));
+        assertEquals(0, report.totalCriticalEvents(), "Low severity pothole is not critical");
+    }
 }
