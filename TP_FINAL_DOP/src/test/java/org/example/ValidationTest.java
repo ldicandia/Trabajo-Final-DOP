@@ -19,7 +19,7 @@ class ValidationTest {
     void testNoiseFilteringOutliers() {
         RawEventV1 v1 = new RawEventV1(
                 "outlier", Instant.now(), "1.0", "TRF",
-                new RawEventV1.Payload(300.0, 1, null, null, null, null) // Speed > 250
+                new RawEventV1.Payload(600.0, 1, null, null, null, null) // Speed > 500
         );
 
         Optional<UnifiedEvent> result = refinery.refine(v1);

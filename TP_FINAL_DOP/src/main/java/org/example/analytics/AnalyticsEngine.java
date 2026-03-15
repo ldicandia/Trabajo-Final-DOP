@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.DoubleStream;
 
 public class AnalyticsEngine {
     private final EventRefinery refinery;
@@ -23,32 +24,29 @@ public class AnalyticsEngine {
     }
 
     public AnalyticsReport analyze(List<RawEvent> rawEvents) {
-        // 4. Schema distribution
         Map<String, Long> schemaDistribution = rawEvents.stream()
                 .collect(Collectors.groupingBy(e -> switch (e) {
-                    case RawEventV1 v1 -> "V1.0";
-                    case RawEventV15 v15 -> "V1.5";
-                    case RawEventV2 v2 -> "V2.0";
+                    case RawEventV1 _ -> "V1.0";
+                    case RawEventV15 _ -> "V1.5";
+                    case RawEventV2 _ -> "V2.0";
                 }, Collectors.counting()));
 
-        // Refine events
         List<UnifiedEvent> validEvents = rawEvents.stream()
                 .map(refinery::refine)
                 .flatMap(Optional::stream)
                 .toList();
 
-        // 1. Total valid
         long totalValid = validEvents.size();
 
-        // 2. Average speed (Traffic only)
         double averageSpeed = validEvents.stream()
-                .filter(e -> e instanceof TrafficEvent)
-                .map(e -> (TrafficEvent) e)
-                .mapToDouble(TrafficEvent::speedKmh)
+                .flatMapToDouble(event -> switch (event) {
+                    case TrafficEvent t -> DoubleStream.of(t.speedKmh());
+                    case WeatherEvent ignored -> DoubleStream.empty();
+                    case ReportEvent ignored -> DoubleStream.empty();
+                })
                 .average()
                 .orElse(0.0);
 
-        // 3. Critical events
         long criticalEvents = validEvents.stream()
                 .filter(this::isCritical)
                 .count();
@@ -72,7 +70,7 @@ public class AnalyticsEngine {
 
                 yield severePothole || isBrokenLight;
             }
-            case TrafficEvent t -> false; // No critical traffic events explicitly defined
+            case TrafficEvent ignored -> false; // No critical traffic events explicitly defined
         };
     }
 }

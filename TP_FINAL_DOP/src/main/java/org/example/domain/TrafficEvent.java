@@ -12,7 +12,7 @@ public record TrafficEvent(
     public TrafficEvent {
         Objects.requireNonNull(id);
         Objects.requireNonNull(timestamp);
-        if (speedKmh < 0 || speedKmh > 250) {
+        if (speedKmh < 0 || speedKmh > 500) {
             throw new IllegalArgumentException("Invalid speed amount");
         }
     }
