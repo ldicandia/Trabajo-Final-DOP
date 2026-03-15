@@ -12,6 +12,8 @@ import org.example.schemas.RawEvent;
 import java.io.File;
 import java.util.List;
 
+import static java.lang.IO.println;
+
 public class Main {
     static void main() throws Exception {
         ObjectMapper mapper = new ObjectMapper()
@@ -27,7 +29,7 @@ public class Main {
             inputFile = new File("TP_FINAL_DOP/example_input.json");
         }
         if (!inputFile.exists()) {
-            System.err.println("example_input.json not found in the current directory.");
+            println("example_input.json not found in the current directory.");
             return;
         }
 

@@ -70,7 +70,7 @@ public class AnalyticsEngine {
 
                 yield severePothole || isBrokenLight;
             }
-            case TrafficEvent ignored -> false; // No critical traffic events explicitly defined
+            case TrafficEvent ignored -> false;
         };
     }
 }
