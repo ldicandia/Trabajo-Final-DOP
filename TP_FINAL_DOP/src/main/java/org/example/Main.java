@@ -1,17 +1,46 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import org.example.analytics.AnalyticsEngine;
+import org.example.analytics.AnalyticsReport;
+import org.example.pipeline.EventRefinery;
+import org.example.schemas.RawEvent;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
+import java.io.File;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        ObjectMapper mapper = new ObjectMapper()
+                .registerModule(new JavaTimeModule());
+        
+        com.fasterxml.jackson.databind.module.SimpleModule module = new com.fasterxml.jackson.databind.module.SimpleModule();
+        module.addDeserializer(RawEvent.class, new org.example.schemas.RawEventDeserializer());
+        mapper.registerModule(module);
+        
+        // Read raw events
+        File inputFile = new File("example_input.json");
+        if (!inputFile.exists()) {
+            inputFile = new File("TP_FINAL_DOP/example_input.json");
         }
+        
+        if (!inputFile.exists()) {
+            System.err.println("example_input.json not found in the current directory.");
+            return;
+        }
+
+        List<RawEvent> events = mapper.readValue(inputFile, new TypeReference<>() {});
+        
+        // Initialize pipeline and engine
+        EventRefinery refinery = new EventRefinery();
+        AnalyticsEngine engine = new AnalyticsEngine(refinery);
+        
+        // Analyze
+        AnalyticsReport report = engine.analyze(events);
+        
+        // Output metrics
+        report.printReport();
     }
 }
