@@ -10,6 +10,7 @@ import org.pod.schemas.RawEventV15;
 import org.pod.schemas.RawEventV2;
 
 import java.util.Optional;
+import java.util.function.Supplier;
 
 public class EventRefinery {
 
@@ -21,7 +22,7 @@ public class EventRefinery {
         };
     }
 
-    private <T extends UnifiedEvent> Optional<T> tryBuild(java.util.function.Supplier<T> builder) {
+    private <T extends UnifiedEvent> Optional<T> tryBuild(Supplier<T> builder) {
         try {
             return Optional.of(builder.get());
         } catch (Exception e) {
