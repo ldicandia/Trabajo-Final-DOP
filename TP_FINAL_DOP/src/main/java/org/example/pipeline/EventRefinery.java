@@ -37,13 +37,11 @@ public class EventRefinery {
             }
             case "WTH" -> {
                 if (payload.T() == null) yield Optional.empty();
-                // Convert Fahrenheit to Celsius
                 double tempC = (payload.T() - 32) * 5 / 9.0;
                 yield Optional.of(new WeatherEvent(id, timestamp, tempC, payload.H()));
             }
             case "REPORT" -> {
                 if (payload.CAT() == null || payload.DESC() == null) yield Optional.empty();
-                // V1 missing severity? We can assume UNKNOWN or infer it.
                 yield Optional.of(new ReportEvent(id, timestamp, payload.CAT(), "UNKNOWN", payload.DESC()));
             }
             default -> Optional.empty();
