@@ -1,5 +1,6 @@
 package org.pod.analytics;
 
+import org.pod.Constants;
 import org.pod.domain.ReportEvent;
 import org.pod.domain.TrafficEvent;
 import org.pod.domain.UnifiedEvent;
@@ -56,17 +57,21 @@ public class AnalyticsEngine {
 
     private boolean isCritical(UnifiedEvent event) {
         return switch (event) {
-            case WeatherEvent w -> w.temperatureC() < 0 || w.temperatureC() > 35;
+            case WeatherEvent w -> w.temperatureC() < Constants.CRITICAL_TEMP_LOW_C
+                    || w.temperatureC() > Constants.CRITICAL_TEMP_HIGH_C;
             case ReportEvent r -> {
                 String cat = r.category() != null ? r.category().toLowerCase() : "";
                 String desc = r.description() != null ? r.description().toLowerCase() : "";
                 String sev = r.severity() != null ? r.severity().toUpperCase() : "";
 
-                boolean isPothole = cat.contains("pothole");
-                boolean severePothole = isPothole && (sev.equals("HIGH") || desc.contains("avenue") || desc.contains("avenida"));
+                boolean isPothole = cat.contains(Constants.CATEGORY_POTHOLE);
+                boolean severePothole = isPothole && (sev.equals(Constants.SEVERITY_HIGH)
+                        || desc.contains(Constants.AREA_KEYWORD_AVENUE)
+                        || desc.contains(Constants.AREA_KEYWORD_AVENIDA));
 
-                boolean isBrokenLight = (cat.contains("traffic_light") || cat.contains("traffic light")) 
-                        && sev.contains("BROKEN");
+                boolean isBrokenLight = (cat.contains(Constants.CATEGORY_TRAFFIC_LIGHT)
+                        || cat.contains(Constants.CATEGORY_TRAFFIC_LIGHT_ALT))
+                        && sev.contains(Constants.SEVERITY_BROKEN);
 
                 yield severePothole || isBrokenLight;
             }

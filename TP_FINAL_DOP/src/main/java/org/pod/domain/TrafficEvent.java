@@ -1,5 +1,7 @@
 package org.pod.domain;
 
+import org.pod.Constants;
+
 import java.time.Instant;
 import java.util.Objects;
 
@@ -12,7 +14,7 @@ public record TrafficEvent(
     public TrafficEvent {
         Objects.requireNonNull(id);
         Objects.requireNonNull(timestamp);
-        if (speedKmh < 0 || speedKmh > 500) {
+        if (speedKmh < Constants.MIN_VALID_SPEED_KMH || speedKmh > Constants.MAX_VALID_SPEED_KMH) {
             throw new IllegalArgumentException("Invalid speed amount");
         }
     }

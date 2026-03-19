@@ -1,5 +1,6 @@
 package org.pod.pipeline;
 
+import org.pod.Constants;
 import org.pod.domain.ReportEvent;
 import org.pod.domain.TrafficEvent;
 import org.pod.domain.UnifiedEvent;
@@ -31,13 +32,20 @@ public class EventRefinery {
     }
 
     private Optional<UnifiedEvent> parseV1(RawEventV1 v1) {
-        return Optional.ofNullable(v1.TYPE())
+        return Optional.ofNullable(v1.type())
             .map(String::toUpperCase)
-            .flatMap(type -> Optional.ofNullable(v1.PAYLOAD())
+            .flatMap(type -> Optional.ofNullable(v1.payload())
                 .flatMap(payload -> switch (type) {
-                    case "TRF" -> tryBuild(() -> new TrafficEvent(v1.id(), v1.timestamp(), payload.SPD(), payload.LNE()));
-                    case "WTH" -> tryBuild(() -> new WeatherEvent(v1.id(), v1.timestamp(), (payload.T() - 32) * 5 / 9.0, payload.H()));
-                    case "REPORT" -> tryBuild(() -> new ReportEvent(v1.id(), v1.timestamp(), payload.CAT(), "UNKNOWN", payload.DESC()));
+                    case "TRF" -> tryBuild(() -> new TrafficEvent(v1.id(), v1.timestamp(), 
+                            payload.speed() != null ? payload.speed() : 0, 
+                            payload.lane() != null ? payload.lane() : 0));
+                    case "WTH" -> tryBuild(() -> new WeatherEvent(v1.id(), v1.timestamp(), 
+                            payload.temperature() != null ? (payload.temperature() - 32) * 5 / 9.0 : 0, 
+                            payload.humidity()));
+                    case "REPORT" -> tryBuild(() -> new ReportEvent(v1.id(), v1.timestamp(), 
+                            payload.category() != null ? payload.category() : Constants.SEVERITY_UNKNOWN,
+                            Constants.SEVERITY_UNKNOWN,
+                            payload.description() != null ? payload.description() : ""));
                     default -> Optional.empty();
                 }));
     }
@@ -46,21 +54,21 @@ public class EventRefinery {
         return Optional.ofNullable(v15.kind())
             .map(String::toLowerCase)
             .flatMap(kind -> switch (kind) {
-                case "traffic" -> tryBuild(() -> new TrafficEvent(
+                case Constants.EVENT_TYPE_TRAFFIC -> tryBuild(() -> new TrafficEvent(
                         v15.id(), v15.timestamp(), v15.velocity(),
                         Optional.ofNullable(v15.attributes())
-                                .map(RawEventV15.Attributes::lane_id)
+                                .map(RawEventV15.Attributes::laneId)
                                 .map(l -> l.replace("L-", ""))
                                 .map(Integer::parseInt)
                                 .orElse(0)
                 ));
-                case "weather" -> tryBuild(() -> new WeatherEvent(
-                        v15.id(), v15.timestamp(), v15.temp_c(), 
-                        Optional.ofNullable(v15.attributes()).map(RawEventV15.Attributes::HUMIDITY).orElse(null)
+                case Constants.EVENT_TYPE_WEATHER -> tryBuild(() -> new WeatherEvent(
+                        v15.id(), v15.timestamp(), v15.temperatureC(), 
+                        Optional.ofNullable(v15.attributes()).map(RawEventV15.Attributes::humidity).orElse(null)
                 ));
-                case "report" -> tryBuild(() -> new ReportEvent(
+                case Constants.EVENT_TYPE_REPORT -> tryBuild(() -> new ReportEvent(
                         v15.id(), v15.timestamp(), v15.category(),
-                        Optional.ofNullable(v15.attributes()).map(RawEventV15.Attributes::severity).orElse("UNKNOWN"),
+                        Optional.ofNullable(v15.attributes()).map(RawEventV15.Attributes::severity).orElse(Constants.SEVERITY_UNKNOWN),
                         Optional.ofNullable(v15.attributes()).map(RawEventV15.Attributes::area).orElse("")
                 ));
                 default -> Optional.empty();

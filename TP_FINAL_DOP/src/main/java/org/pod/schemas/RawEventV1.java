@@ -1,20 +1,27 @@
 package org.pod.schemas;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Instant;
+
 
 public record RawEventV1(
         String id,
         Instant timestamp,
-        String SCHEMA_VER,
-        String TYPE,
-        Payload PAYLOAD
+        @JsonProperty("SCHEMA_VER") String schemaVersion,
+        @JsonProperty("TYPE") String type,
+        @JsonProperty("PAYLOAD") Payload payload
 ) implements RawEvent {
     public record Payload(
-            Double SPD,
-            Integer LNE,
-            Double T,
-            Double H,
-            String CAT,
-            String DESC
+            @JsonProperty("SPD") Double speed,
+            @JsonProperty("LNE") Integer lane,
+            @JsonProperty("T") Double temperature,
+            @JsonProperty("H") Double humidity,
+            @JsonProperty("CAT") String category,
+            @JsonProperty("DESC") String description
     ) {}
+    
+    // Convenience accessors for backward compatibility
+    public String TYPE() { return type; }
+    public String SCHEMA_VER() { return schemaVersion; }
+    public Payload PAYLOAD() { return payload; }
 }
