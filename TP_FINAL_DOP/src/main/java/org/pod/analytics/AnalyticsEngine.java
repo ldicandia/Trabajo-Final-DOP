@@ -27,9 +27,9 @@ public class AnalyticsEngine {
     public AnalyticsReport analyze(List<RawEvent> rawEvents) {
         Map<String, Long> schemaDistribution = rawEvents.stream()
                 .collect(Collectors.groupingBy(e -> switch (e) {
-                    case RawEventV1 _ -> "V1.0";
-                    case RawEventV15 _ -> "V1.5";
-                    case RawEventV2 _ -> "V2.0";
+                    case RawEventV1 v1 -> "V1.0";
+                    case RawEventV15 v15 -> "V1.5";
+                    case RawEventV2 v2 -> "V2.0";
                 }, Collectors.counting()));
 
         List<UnifiedEvent> validEvents = rawEvents.stream()

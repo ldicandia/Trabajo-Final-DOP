@@ -54,19 +54,17 @@ public class EventRefinery {
         return Optional.ofNullable(v15.kind())
             .map(String::toLowerCase)
             .flatMap(kind -> switch (kind) {
-                case Constants.EVENT_TYPE_TRAFFIC -> tryBuild(() -> new TrafficEvent(
-                        v15.id(), v15.timestamp(), v15.velocity(),
-                        Optional.ofNullable(v15.attributes())
+                case "traffic" -> tryBuild(() -> new TrafficEvent(v15.id(), v15.timestamp(), v15.velocity(), Optional.ofNullable(v15.attributes())
                                 .map(RawEventV15.Attributes::laneId)
                                 .map(l -> l.replace("L-", ""))
                                 .map(Integer::parseInt)
                                 .orElse(0)
                 ));
-                case Constants.EVENT_TYPE_WEATHER -> tryBuild(() -> new WeatherEvent(
+                case  "weather" -> tryBuild(() -> new WeatherEvent(
                         v15.id(), v15.timestamp(), v15.temperatureC(), 
                         Optional.ofNullable(v15.attributes()).map(RawEventV15.Attributes::humidity).orElse(null)
                 ));
-                case Constants.EVENT_TYPE_REPORT -> tryBuild(() -> new ReportEvent(
+                case "report" -> tryBuild(() -> new ReportEvent(
                         v15.id(), v15.timestamp(), v15.category(),
                         Optional.ofNullable(v15.attributes()).map(RawEventV15.Attributes::severity).orElse(Constants.SEVERITY_UNKNOWN),
                         Optional.ofNullable(v15.attributes()).map(RawEventV15.Attributes::area).orElse("")

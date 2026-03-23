@@ -4,12 +4,7 @@ package org.pod;
  * Global constants for event validation and categorization.
  */
 public final class Constants {
-    
-    // Event type constants
-    public static final String EVENT_TYPE_TRAFFIC = "traffic";
-    public static final String EVENT_TYPE_WEATHER = "weather";
-    public static final String EVENT_TYPE_REPORT = "report";
-    
+
     // Traffic validation
     public static final double MIN_VALID_SPEED_KMH = 0.0;
     public static final double MAX_VALID_SPEED_KMH = 500.0;
