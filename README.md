@@ -9,6 +9,7 @@ Java + Maven project that ingests mixed-version city events, normalizes them int
 - Converts each raw record into a normalized `UnifiedEvent` (`EventRefinery`).
 - Discards malformed/noisy events through domain validations.
 - Computes analytics (`AnalyticsEngine`) and prints a final report (`AnalyticsReport`).
+- Includes a desktop drag-and-drop UI to analyze any `.json` file interactively.
 
 ## Tech stack
 
@@ -23,6 +24,9 @@ Java + Maven project that ingests mixed-version city events, normalizes them int
 TP_FINAL_DOP/
   src/main/java/org/pod/
 	Main.java                        # App entry flow
+  app/AnalyticsApplicationService.java # Shared parse + analytics service (CLI/UI)
+  ui/UiMain.java                   # Desktop UI launcher
+  ui/AnalyticsDropFrame.java       # Drag-and-drop window
 	schemas/                         # Raw schema models + polymorphic deserializer
 	pipeline/EventRefinery.java      # Schema-specific mapping -> UnifiedEvent
 	domain/                          # Unified validated event records
@@ -121,6 +125,15 @@ mvn -DskipTests package
 ```
 
 Then run `org.pod.Main` from your IDE, or use your preferred Java launcher setup for the compiled classes.
+
+## Run the drag-and-drop UI
+
+
+How to use it:
+
+1. Open the UI.
+2. Drag and drop a `.json` file into the highlighted area (or click `Seleccionar JSON`).
+3. The analytics report appears in the results panel.
 
 ## Notes
 

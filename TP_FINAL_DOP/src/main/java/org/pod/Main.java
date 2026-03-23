@@ -1,45 +1,41 @@
 package org.pod;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import org.pod.analytics.AnalyticsEngine;
+import org.pod.app.AnalyticsApplicationService;
 import org.pod.analytics.AnalyticsReport;
-import org.pod.pipeline.EventRefinery;
-import org.pod.schemas.RawEvent;
+import org.pod.ui.UiMain;
 
 import java.io.File;
-import java.util.List;
-
-import static java.lang.IO.println;
 
 public class Main {
-    static void main() throws Exception {
-        ObjectMapper mapper = new ObjectMapper()
-                .registerModule(new JavaTimeModule());
-        
-        SimpleModule module = new SimpleModule();
-        module.addDeserializer(RawEvent.class, new org.pod.schemas.RawEventDeserializer());
-        mapper.registerModule(module);
-        
-
-        File inputFile = new File("example_input.json");
-        if (!inputFile.exists()) {
-            inputFile = new File("TP_FINAL_DOP/example_input.json");
-        }
-        if (!inputFile.exists()) {
-            println("example_input.json not found in the current directory.");
+    public static void main(String[] args) throws Exception {
+        if (args.length == 0 || "--ui".equalsIgnoreCase(args[0])) {
+            UiMain.launch();
             return;
         }
 
-        List<RawEvent> events = mapper.readValue(inputFile, new TypeReference<>() {});
+        File inputFile = resolveInputFile(args);
+        if (inputFile == null) {
+            System.out.println("No se encontro el archivo JSON. Pasa una ruta por argumento o usa --ui para abrir la interfaz.");
+            return;
+        }
 
-        EventRefinery refinery = new EventRefinery();
-        AnalyticsEngine engine = new AnalyticsEngine(refinery);
-
-        AnalyticsReport report = engine.analyze(events);
-
+        AnalyticsApplicationService service = new AnalyticsApplicationService();
+        AnalyticsReport report = service.analyze(inputFile.toPath());
         report.printReport();
+    }
+
+    private static File resolveInputFile(String[] args) {
+        if (args.length > 0 && !"--ui".equalsIgnoreCase(args[0])) {
+            File customInput = new File(args[0]);
+            return customInput.exists() ? customInput : null;
+        }
+
+        File inputFile = new File("example_input.json");
+        if (inputFile.exists()) {
+            return inputFile;
+        }
+
+        inputFile = new File("TP_FINAL_DOP/example_input.json");
+        return inputFile.exists() ? inputFile : null;
     }
 }

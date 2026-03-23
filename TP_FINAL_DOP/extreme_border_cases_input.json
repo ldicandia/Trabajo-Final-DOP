@@ -1,0 +1,546 @@
+[
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-trf-0001",
+    "timestamp": "2026-03-23T10:00:00Z",
+    "TYPE": "TRF",
+    "PAYLOAD": { "SPD": 0.0, "LNE": 0 }
+  },
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-trf-0002",
+    "timestamp": "2026-03-23T10:00:01Z",
+    "TYPE": "TRF",
+    "PAYLOAD": { "SPD": 500.0, "LNE": 999 }
+  },
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-trf-0003",
+    "timestamp": "2026-03-23T10:00:02Z",
+    "TYPE": "TRF",
+    "PAYLOAD": { "SPD": -0.1, "LNE": 1 }
+  },
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-trf-0004",
+    "timestamp": "2026-03-23T10:00:03Z",
+    "TYPE": "TRF",
+    "PAYLOAD": { "SPD": 500.1, "LNE": 1 }
+  },
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-wth-0005",
+    "timestamp": "2026-03-23T10:00:04Z",
+    "TYPE": "WTH",
+    "PAYLOAD": { "T": -130.0, "H": 0.0 }
+  },
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-wth-0006",
+    "timestamp": "2026-03-23T10:00:05Z",
+    "TYPE": "WTH",
+    "PAYLOAD": { "T": 140.0, "H": 100.0 }
+  },
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-wth-0007",
+    "timestamp": "2026-03-23T10:00:06Z",
+    "TYPE": "WTH",
+    "PAYLOAD": { "T": -200.0, "H": 30.0 }
+  },
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-wth-0008",
+    "timestamp": "2026-03-23T10:00:07Z",
+    "TYPE": "WTH",
+    "PAYLOAD": { "T": 1000.0, "H": 30.0 }
+  },
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-wth-0009",
+    "timestamp": "2026-03-23T10:00:08Z",
+    "TYPE": "WTH",
+    "PAYLOAD": { "T": 32.0, "H": -0.01 }
+  },
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-wth-0010",
+    "timestamp": "2026-03-23T10:00:09Z",
+    "TYPE": "WTH",
+    "PAYLOAD": { "T": 32.0, "H": 100.01 }
+  },
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-rep-0011",
+    "timestamp": "2026-03-23T10:00:10Z",
+    "TYPE": "REPORT",
+    "PAYLOAD": { "CAT": "Pothole", "DESC": "Huge pothole on avenida central near school" }
+  },
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-rep-0012",
+    "timestamp": "2026-03-23T10:00:11Z",
+    "TYPE": "REPORT",
+    "PAYLOAD": { "CAT": "traffic light", "DESC": "BROKEN light at 9th avenue" }
+  },
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-rep-0013",
+    "timestamp": "2026-03-23T10:00:12Z",
+    "TYPE": "REPORT",
+    "PAYLOAD": {
+      "CAT": "Pothole",
+      "DESC": "LONG_TEXT_BLOCK_A: avenida avenida avenue avenue pothole pothole pothole :: 0000000000111111111122222222223333333333444444444455555555556666666666777777777788888888889999999999 :: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ :: repeat repeat repeat repeat repeat repeat repeat repeat repeat repeat repeat repeat repeat repeat repeat repeat repeat repeat repeat repeat"
+    }
+  },
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-unk-0014",
+    "timestamp": "2026-03-23T10:00:13Z",
+    "TYPE": "UNKNOWN_TYPE",
+    "PAYLOAD": { "SPD": 90.0, "LNE": 2 }
+  },
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-null-0015",
+    "timestamp": "2026-03-23T10:00:14Z",
+    "TYPE": null,
+    "PAYLOAD": { "SPD": 60.0, "LNE": 1 }
+  },
+
+  {
+    "version": 1.5,
+    "id": "v15-trf-0101",
+    "timestamp": "2026-03-23T10:01:00Z",
+    "kind": "traffic",
+    "velocity": 0.0,
+    "attributes": { "lane_id": "L-0" }
+  },
+  {
+    "version": 1.5,
+    "id": "v15-trf-0102",
+    "timestamp": "2026-03-23T10:01:01Z",
+    "kind": "traffic",
+    "velocity": 500.0,
+    "attributes": { "lane_id": "L-2147483647" }
+  },
+  {
+    "version": 1.5,
+    "id": "v15-trf-0103",
+    "timestamp": "2026-03-23T10:01:02Z",
+    "kind": "traffic",
+    "velocity": -0.0001,
+    "attributes": { "lane_id": "L-1" }
+  },
+  {
+    "version": 1.5,
+    "id": "v15-trf-0104",
+    "timestamp": "2026-03-23T10:01:03Z",
+    "kind": "traffic",
+    "velocity": 500.0001,
+    "attributes": { "lane_id": "L-2" }
+  },
+  {
+    "version": 1.5,
+    "id": "v15-trf-0105",
+    "timestamp": "2026-03-23T10:01:04Z",
+    "kind": "traffic",
+    "velocity": 80.0,
+    "attributes": { "lane_id": "L-XYZ" }
+  },
+  {
+    "version": 1.5,
+    "id": "v15-trf-0106",
+    "timestamp": "2026-03-23T10:01:05Z",
+    "kind": "traffic",
+    "velocity": null,
+    "attributes": { "lane_id": "L-3" }
+  },
+  {
+    "version": 1.5,
+    "id": "v15-wth-0107",
+    "timestamp": "2026-03-23T10:01:06Z",
+    "kind": "weather",
+    "temp_c": -90.0,
+    "attributes": { "HUMIDITY": 0.0 }
+  },
+  {
+    "version": 1.5,
+    "id": "v15-wth-0108",
+    "timestamp": "2026-03-23T10:01:07Z",
+    "kind": "weather",
+    "temp_c": 60.0,
+    "attributes": { "HUMIDITY": 100.0 }
+  },
+  {
+    "version": 1.5,
+    "id": "v15-wth-0109",
+    "timestamp": "2026-03-23T10:01:08Z",
+    "kind": "weather",
+    "temp_c": -90.1,
+    "attributes": { "HUMIDITY": 20.0 }
+  },
+  {
+    "version": 1.5,
+    "id": "v15-wth-0110",
+    "timestamp": "2026-03-23T10:01:09Z",
+    "kind": "weather",
+    "temp_c": 60.1,
+    "attributes": { "HUMIDITY": 20.0 }
+  },
+  {
+    "version": 1.5,
+    "id": "v15-wth-0111",
+    "timestamp": "2026-03-23T10:01:10Z",
+    "kind": "weather",
+    "temp_c": 20.0,
+    "attributes": { "HUMIDITY": -0.1 }
+  },
+  {
+    "version": 1.5,
+    "id": "v15-wth-0112",
+    "timestamp": "2026-03-23T10:01:11Z",
+    "kind": "weather",
+    "temp_c": 20.0,
+    "attributes": { "HUMIDITY": 100.1 }
+  },
+  {
+    "version": 1.5,
+    "id": "v15-rep-0113",
+    "timestamp": "2026-03-23T10:01:12Z",
+    "kind": "report",
+    "category": "POTHOLE",
+    "attributes": { "severity": "HIGH", "area": "avenida de mayo" }
+  },
+  {
+    "version": 1.5,
+    "id": "v15-rep-0114",
+    "timestamp": "2026-03-23T10:01:13Z",
+    "kind": "report",
+    "category": "traffic_light",
+    "attributes": { "severity": "BROKEN", "area": "junction 12" }
+  },
+  {
+    "version": 1.5,
+    "id": "v15-rep-0115",
+    "timestamp": "2026-03-23T10:01:14Z",
+    "kind": "report",
+    "category": "Pothole",
+    "attributes": {
+      "severity": "LOW",
+      "area": "LONG_TEXT_BLOCK_B: avenue avenue avenue avenida avenida avenida :: xxxxxxxxxxyyyyyyyyyyzzzzzzzzzz1111111111222222222233333333334444444444555555555566666666667777777777888888888899999999990000000000 :: this is intentionally very long to stress UI rendering and text wrapping in output panels"
+    }
+  },
+  {
+    "version": 1.5,
+    "id": "v15-rep-0116",
+    "timestamp": "2026-03-23T10:01:15Z",
+    "kind": "report",
+    "category": null,
+    "attributes": { "severity": "HIGH", "area": "avenue alpha" }
+  },
+
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-trf-0201",
+    "timestamp": "2026-03-23T10:02:00Z",
+    "eventType": "TRAFFIC",
+    "data": { "speedKmh": 0.0, "lane": 0, "temperature": null, "humidity": null, "category": null, "status": null }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-trf-0202",
+    "timestamp": "2026-03-23T10:02:01Z",
+    "eventType": "TRAFFIC",
+    "data": { "speedKmh": 500.0, "lane": 2147483647, "temperature": null, "humidity": null, "category": null, "status": null }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-trf-0203",
+    "timestamp": "2026-03-23T10:02:02Z",
+    "eventType": "TRAFFIC",
+    "data": { "speedKmh": -1.0, "lane": 1, "temperature": null, "humidity": null, "category": null, "status": null }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-trf-0204",
+    "timestamp": "2026-03-23T10:02:03Z",
+    "eventType": "TRAFFIC",
+    "data": { "speedKmh": 9999.0, "lane": 1, "temperature": null, "humidity": null, "category": null, "status": null }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-trf-0205",
+    "timestamp": "2026-03-23T10:02:04Z",
+    "eventType": "TRAFFIC",
+    "data": { "speedKmh": null, "lane": 1, "temperature": null, "humidity": null, "category": null, "status": null }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-wth-0206",
+    "timestamp": "2026-03-23T10:02:05Z",
+    "eventType": "WEATHER",
+    "data": { "speedKmh": null, "lane": null, "temperature": -90.0, "humidity": 0.0, "category": null, "status": null }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-wth-0207",
+    "timestamp": "2026-03-23T10:02:06Z",
+    "eventType": "WEATHER",
+    "data": { "speedKmh": null, "lane": null, "temperature": 60.0, "humidity": 100.0, "category": null, "status": null }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-wth-0208",
+    "timestamp": "2026-03-23T10:02:07Z",
+    "eventType": "WEATHER",
+    "data": { "speedKmh": null, "lane": null, "temperature": -90.01, "humidity": 40.0, "category": null, "status": null }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-wth-0209",
+    "timestamp": "2026-03-23T10:02:08Z",
+    "eventType": "WEATHER",
+    "data": { "speedKmh": null, "lane": null, "temperature": 60.01, "humidity": 40.0, "category": null, "status": null }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-wth-0210",
+    "timestamp": "2026-03-23T10:02:09Z",
+    "eventType": "WEATHER",
+    "data": { "speedKmh": null, "lane": null, "temperature": 10.0, "humidity": -1.0, "category": null, "status": null }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-wth-0211",
+    "timestamp": "2026-03-23T10:02:10Z",
+    "eventType": "WEATHER",
+    "data": { "speedKmh": null, "lane": null, "temperature": 10.0, "humidity": 101.0, "category": null, "status": null }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-rep-0212",
+    "timestamp": "2026-03-23T10:02:11Z",
+    "eventType": "REPORT",
+    "data": { "speedKmh": null, "lane": null, "temperature": null, "humidity": null, "category": "Pothole", "status": "HIGH" }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-rep-0213",
+    "timestamp": "2026-03-23T10:02:12Z",
+    "eventType": "REPORT",
+    "data": { "speedKmh": null, "lane": null, "temperature": null, "humidity": null, "category": "TRAFFIC_LIGHT", "status": "BROKEN" }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-rep-0214",
+    "timestamp": "2026-03-23T10:02:13Z",
+    "eventType": "REPORT",
+    "data": {
+      "speedKmh": null,
+      "lane": null,
+      "temperature": null,
+      "humidity": null,
+      "category": "traffic light",
+      "status": "BROKEN_AND_FLICKERING_WITH_EXTREMELY_VERBOSE_STATUS_FIELD_TO_STRESS_LONG_STRING_HANDLING_ABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789_ABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789"
+    }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-rep-0215",
+    "timestamp": "2026-03-23T10:02:14Z",
+    "eventType": "REPORT",
+    "data": { "speedKmh": null, "lane": null, "temperature": null, "humidity": null, "category": null, "status": "HIGH" }
+  },
+
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-bulk-0301",
+    "timestamp": "2026-03-23T10:03:00Z",
+    "TYPE": "TRF",
+    "PAYLOAD": { "SPD": 10.0, "LNE": 1 }
+  },
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-bulk-0302",
+    "timestamp": "2026-03-23T10:03:01Z",
+    "TYPE": "TRF",
+    "PAYLOAD": { "SPD": 20.0, "LNE": 2 }
+  },
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-bulk-0303",
+    "timestamp": "2026-03-23T10:03:02Z",
+    "TYPE": "TRF",
+    "PAYLOAD": { "SPD": 30.0, "LNE": 3 }
+  },
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-bulk-0304",
+    "timestamp": "2026-03-23T10:03:03Z",
+    "TYPE": "TRF",
+    "PAYLOAD": { "SPD": 40.0, "LNE": 4 }
+  },
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-bulk-0305",
+    "timestamp": "2026-03-23T10:03:04Z",
+    "TYPE": "TRF",
+    "PAYLOAD": { "SPD": 50.0, "LNE": 5 }
+  },
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-bulk-0306",
+    "timestamp": "2026-03-23T10:03:05Z",
+    "TYPE": "TRF",
+    "PAYLOAD": { "SPD": 60.0, "LNE": 6 }
+  },
+  {
+    "version": 1.5,
+    "id": "v15-bulk-0307",
+    "timestamp": "2026-03-23T10:03:06Z",
+    "kind": "weather",
+    "temp_c": 0.0,
+    "attributes": { "HUMIDITY": 50.0 }
+  },
+  {
+    "version": 1.5,
+    "id": "v15-bulk-0308",
+    "timestamp": "2026-03-23T10:03:07Z",
+    "kind": "weather",
+    "temp_c": 35.0,
+    "attributes": { "HUMIDITY": 50.0 }
+  },
+  {
+    "version": 1.5,
+    "id": "v15-bulk-0309",
+    "timestamp": "2026-03-23T10:03:08Z",
+    "kind": "weather",
+    "temp_c": 35.0001,
+    "attributes": { "HUMIDITY": 50.0 }
+  },
+  {
+    "version": 1.5,
+    "id": "v15-bulk-0310",
+    "timestamp": "2026-03-23T10:03:09Z",
+    "kind": "weather",
+    "temp_c": -0.0001,
+    "attributes": { "HUMIDITY": 50.0 }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-bulk-0311",
+    "timestamp": "2026-03-23T10:03:10Z",
+    "eventType": "TRAFFIC",
+    "data": { "speedKmh": 120.0, "lane": 1, "temperature": null, "humidity": null, "category": null, "status": null }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-bulk-0312",
+    "timestamp": "2026-03-23T10:03:11Z",
+    "eventType": "WEATHER",
+    "data": { "speedKmh": null, "lane": null, "temperature": 36.0, "humidity": 20.0, "category": null, "status": null }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-bulk-0313",
+    "timestamp": "2026-03-23T10:03:12Z",
+    "eventType": "REPORT",
+    "data": { "speedKmh": null, "lane": null, "temperature": null, "humidity": null, "category": "Pothole", "status": "LOW" }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-bulk-0314",
+    "timestamp": "2026-03-23T10:03:13Z",
+    "eventType": "REPORT",
+    "data": { "speedKmh": null, "lane": null, "temperature": null, "humidity": null, "category": "Pothole", "status": "HIGH" }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-bulk-0315",
+    "timestamp": "2026-03-23T10:03:14Z",
+    "eventType": "REPORT",
+    "data": { "speedKmh": null, "lane": null, "temperature": null, "humidity": null, "category": "traffic_light", "status": "BROKEN" }
+  },
+
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-massive-0401",
+    "timestamp": "2026-03-23T10:04:00Z",
+    "TYPE": "REPORT",
+    "PAYLOAD": {
+      "CAT": "Pothole",
+      "DESC": "MASSIVE_PAYLOAD_START :: avenida;avenida;avenida;avenida;avenida;avenida;avenida;avenida;avenida;avenida; avenue;avenue;avenue;avenue;avenue;avenue;avenue;avenue;avenue;avenue; pothole;pothole;pothole;pothole;pothole;pothole;pothole;pothole;pothole;pothole; sensor_dump=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC-DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD :: MASSIVE_PAYLOAD_END"
+    }
+  },
+  {
+    "version": 1.5,
+    "id": "v15-massive-0402",
+    "timestamp": "2026-03-23T10:04:01Z",
+    "kind": "report",
+    "category": "traffic light",
+    "attributes": {
+      "severity": "BROKEN",
+      "area": "MASSIVE_AREA_START :: block-0001|block-0002|block-0003|block-0004|block-0005|block-0006|block-0007|block-0008|block-0009|block-0010|block-0011|block-0012|block-0013|block-0014|block-0015|block-0016|block-0017|block-0018|block-0019|block-0020|END"
+    }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-massive-0403",
+    "timestamp": "2026-03-23T10:04:02Z",
+    "eventType": "REPORT",
+    "data": {
+      "speedKmh": null,
+      "lane": null,
+      "temperature": null,
+      "humidity": null,
+      "category": "Pothole",
+      "status": "HIGH_WITH_ULTRA_LONG_STATUS_0000000000111111111122222222223333333333444444444455555555556666666666777777777788888888889999999999_ABCDEFGHIJKLMNOPQRSTUVWXYZ_ABCDEFGHIJKLMNOPQRSTUVWXYZ_ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    }
+  },
+
+  {
+    "SCHEMA_VER": "1.0",
+    "id": "v1-final-0501",
+    "timestamp": "2026-03-23T10:05:00Z",
+    "TYPE": "TRF",
+    "PAYLOAD": { "SPD": 88.8, "LNE": 8 }
+  },
+  {
+    "version": 1.5,
+    "id": "v15-final-0502",
+    "timestamp": "2026-03-23T10:05:01Z",
+    "kind": "traffic",
+    "velocity": 77.7,
+    "attributes": { "lane_id": "L-7" }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-final-0503",
+    "timestamp": "2026-03-23T10:05:02Z",
+    "eventType": "WEATHER",
+    "data": { "speedKmh": null, "lane": null, "temperature": 0.0, "humidity": 50.0, "category": null, "status": null }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-final-0504",
+    "timestamp": "2026-03-23T10:05:03Z",
+    "eventType": "WEATHER",
+    "data": { "speedKmh": null, "lane": null, "temperature": 35.0, "humidity": 50.0, "category": null, "status": null }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-final-0505",
+    "timestamp": "2026-03-23T10:05:04Z",
+    "eventType": "WEATHER",
+    "data": { "speedKmh": null, "lane": null, "temperature": 35.1, "humidity": 50.0, "category": null, "status": null }
+  },
+  {
+    "schemaVersion": "2.0",
+    "id": "v2-final-0506",
+    "timestamp": "2026-03-23T10:05:05Z",
+    "eventType": "REPORT",
+    "data": { "speedKmh": null, "lane": null, "temperature": null, "humidity": null, "category": "traffic_light", "status": "broken" }
+  }
+]
+

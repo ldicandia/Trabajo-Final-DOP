@@ -2,22 +2,30 @@ package org.pod.analytics;
 
 import java.util.Map;
 
-import static java.lang.IO.println;
-
 public record AnalyticsReport(
         long totalValidRecords,
         double averageTrafficSpeed,
         long totalCriticalEvents,
         Map<String, Long> schemaDistribution
 ) {
-    public void printReport() {
-        println("=== CityTyci Data Refinery Report ===");
-        println("1. Total valid records processed: " + totalValidRecords);
-        System.out.printf("2. Average traffic speed: %.2f km/h\n", averageTrafficSpeed);
-        println("3. Total critical events detected: " + totalCriticalEvents);
-        println("4. Schema Version Distribution:");
+    public String toDisplayString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("=== CityTyci Data Refinery Report ===\n");
+        builder.append("1. Total valid records processed: ")
+                .append(totalValidRecords)
+                .append('\n');
+        builder.append(String.format("2. Average traffic speed: %.2f km/h%n", averageTrafficSpeed));
+        builder.append("3. Total critical events detected: ")
+                .append(totalCriticalEvents)
+                .append('\n');
+        builder.append("4. Schema Version Distribution:\n");
         schemaDistribution.forEach((version, count) ->
-                println("   - " + version + ": " + count));
-        println("=====================================");
+                builder.append("   - ").append(version).append(": ").append(count).append('\n'));
+        builder.append("=====================================\n");
+        return builder.toString();
+    }
+
+    public void printReport() {
+        System.out.print(toDisplayString());
     }
 }
