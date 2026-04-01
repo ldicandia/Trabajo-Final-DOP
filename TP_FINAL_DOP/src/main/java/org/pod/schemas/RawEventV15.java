@@ -20,12 +20,10 @@ public record RawEventV15(
             @JsonProperty("severity") String severity,
             @JsonProperty("area") String area
     ) {
-        // Convenience accessor for backward compatibility
         public Double HUMIDITY() { return humidity; }
         public String lane_id() { return laneId; }
     }
-    
-    // Convenience accessors for backward compatibility
+
     public Double temp_c() { return temperatureC; }
 }
 

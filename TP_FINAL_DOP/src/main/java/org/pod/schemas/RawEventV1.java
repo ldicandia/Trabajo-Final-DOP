@@ -19,9 +19,5 @@ public record RawEventV1(
             @JsonProperty("CAT") String category,
             @JsonProperty("DESC") String description
     ) {}
-    
-    // Convenience accessors for backward compatibility
-    public String TYPE() { return type; }
-    public String SCHEMA_VER() { return schemaVersion; }
-    public Payload PAYLOAD() { return payload; }
+
 }
