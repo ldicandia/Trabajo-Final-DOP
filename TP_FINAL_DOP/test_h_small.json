@@ -1,0 +1,1125 @@
+[
+    {
+        "id": "ADE91914-47C7-45EC-A63D-22DA3DA9BEEB",
+        "schemaVersion": "2.0",
+        "data": {
+            "speedkmh": 49.59576264657641,
+            "lane": 3
+        },
+        "Eventtype": "TRAFFIC",
+        "TIMESTAMP": "2026-04-06T18:36:29.571667+00:00"
+    },
+    {
+        "ID": "b96b34c3-78e3-44a0-8969-ab9b77c306d4",
+        "SCHEMA_VER": "1.0",
+        "timestamp": "2026-04-07T08:30:29.571823+00:00",
+        "Payload": {
+            "T": 70.32696899005958,
+            "H": 41.11397098138241
+        },
+        "type": "WTH"
+    },
+    {
+        "body": {
+            "Type": "WEATHER",
+            "reading": 83.67782194119367
+        },
+        "V": "3.0",
+        "Timestamp": "2026-04-06T19:01:29.571900+00:00",
+        "meta": {
+            "origin": "CELLULAR_TOWER",
+            "Priority": "HIGH"
+        },
+        "id": "92ff4610-b1e1-4b57-9298-9b7f4e8f2690"
+    },
+    {
+        "data": {
+            "TEMPERATURE": 14.262831309210249,
+            "Humidity": 110.23100594147242
+        },
+        "id": "f89e4179-6e10-4879-914b-9663a022cca6",
+        "eventtype": "WEATHER",
+        "Timestamp": "2026-04-08T15:01:29.571961+00:00",
+        "SCHEMAVERSION": "2.0"
+    },
+    {
+        "BODY": {
+            "Type": "REPORT",
+            "READING": 78.4006899424565
+        },
+        "id": "12ffec4d-3ee0-4ebd-979d-7c2867187f1d",
+        "META": {
+            "origin": "CELLULAR_TOWER",
+            "Priority": "HIGH"
+        },
+        "V": "3.0",
+        "timestamp": "2026-04-08T07:52:29.572055+00:00"
+    },
+    {
+        "data": {
+            "speedkmh": 117.40317174104288,
+            "lane": 4
+        },
+        "id": "ad910bce-b099-4346-b492-d4198a57c6f1",
+        "Schemaversion": "2.0",
+        "Eventtype": "TRAFFIC",
+        "timestamp": "2026-04-09T05:14:29.572099+00:00"
+    },
+    {
+        "Id": "41233c41-c09f-4810-a4d4-f14b5cb32fdd",
+        "Schemaversion": "2.1",
+        "timestamp": "2026-04-07T10:01:29.572136+00:00",
+        "diagnostic": {
+            "battery": 11,
+            "signal": "STRONG"
+        },
+        "DATA": {
+            "val": 24.154670931801423
+        },
+        "eventtype": "REPORT"
+    },
+    {
+        "ID": "da0c7a5c-b771-45a6-bb06-cc464e92b30c",
+        "eventtype": "REPORT",
+        "Schemaversion": "2.0",
+        "Timestamp": "2026-04-07T17:21:29.572176+00:00",
+        "data": {
+            "category": "TRAFFIC_LIGHT",
+            "status": "BROKEN"
+        }
+    },
+    {
+        "timestamp": "2026-04-06T13:46:29.572210+00:00",
+        "Id": "a77384ae-2634-4ca2-97a1-873172189606",
+        "kind": "traffic",
+        "VERSION": 1.5,
+        "velocity": 47.941318774450124,
+        "Attributes": {
+            "LANE_ID": "L-2"
+        }
+    },
+    {
+        "id": "965e4056-8904-4609-967c-ca1cbe321462",
+        "SCHEMA_VER": "1.0",
+        "TIMESTAMP": "2026-04-09T03:59:29.572248+00:00",
+        "Payload": {
+            "T": 81.10157156492183,
+            "h": 81.35595208819163
+        },
+        "Type": "WTH"
+    },
+    {
+        "id": "a06701eb-f5f9-4e96-9859-22b696c1c40d",
+        "TIMESTAMP": "2026-04-07T01:58:29.572287+00:00",
+        "Schemaversion": "2.1",
+        "Data": {
+            "val": 36.07991405002889
+        },
+        "Diagnostic": {
+            "battery": 21,
+            "signal": "STRONG"
+        },
+        "EVENTTYPE": "WEATHER"
+    },
+    {
+        "SCHEMAVERSION": "2.0",
+        "data": {
+            "category": "TRAFFIC_LIGHT",
+            "STATUS": "BROKEN"
+        },
+        "EVENTTYPE": "REPORT",
+        "timestamp": "2026-04-08T14:56:29.572325+00:00",
+        "ID": "c94139af-a5aa-4b9b-bd72-5356a6cd6c4e"
+    },
+    {
+        "ID": "e39757f2-4609-4fee-989d-be82e314befd",
+        "timestamp": "2026-04-08T05:16:29.572357+00:00",
+        "SCHEMAVERSION": "2.1",
+        "eventType": "REPORT",
+        "data": {
+            "val": 16.089933243736922
+        },
+        "Diagnostic": {
+            "battery": 27,
+            "signal": "STRONG"
+        }
+    },
+    {
+        "schema_ver": "1.0",
+        "timestamp": "2026-04-07T10:52:29.572392+00:00",
+        "PAYLOAD": {
+            "T": 100.83242912647702,
+            "H": 85.94105681813082
+        },
+        "id": "a50b5084-c53b-432c-bb2f-674699374696",
+        "type": "WTH"
+    },
+    {
+        "kind": "report",
+        "VERSION": 1.5,
+        "timestamp": "2026-04-07T04:58:29.572424+00:00",
+        "category": "STREET_CLEAN",
+        "attributes": {
+            "severity": "High",
+            "Area": "North"
+        },
+        "id": "626a1fc3-4c0e-4df5-825c-a2827ff2e694"
+    },
+    {
+        "SCHEMAVERSION": "2.0",
+        "id": "e9b11129-d7a9-483d-85c2-6374a302f78c",
+        "Data": {
+            "Speedkmh": 115.52943891292023,
+            "lane": 1
+        },
+        "timestamp": "2026-04-08T22:53:29.572458+00:00",
+        "Eventtype": "TRAFFIC"
+    },
+    {
+        "Eventtype": "TRAFFIC",
+        "schemaVersion": "2.0",
+        "data": {
+            "SPEEDKMH": 67.68683332531796,
+            "LANE": 2
+        },
+        "ID": "25d8c727-2bc4-418c-b2e1-ed8ce776fd1a",
+        "Timestamp": "2026-04-08T22:03:29.572492+00:00"
+    },
+    {
+        "Timestamp": "2026-04-09T00:45:29.572525+00:00",
+        "Velocity": 53.9847880273131,
+        "attributes": {
+            "lane_id": "L-1"
+        },
+        "Version": 1.5,
+        "kind": "traffic",
+        "id": "A1B0E9D6-9F93-4762-8547-A34F19540F6F"
+    },
+    {
+        "data": {
+            "temperature": 29.037177146146117,
+            "HUMIDITY": 48.6746728816899
+        },
+        "id": "6e979e81-8e98-4037-8dc9-4b180a58bf85",
+        "eventType": "WEATHER",
+        "timestamp": "2026-04-09T09:51:29.572560+00:00",
+        "Schemaversion": "2.0"
+    },
+    {
+        "id": "f68946a9-b1c5-4a51-9522-cb396cf2dda5",
+        "body": {
+            "type": "TRAFFIC",
+            "READING": 22.569521087734103
+        },
+        "V": "3.0",
+        "META": {
+            "Origin": "CELLULAR_TOWER",
+            "priority": "HIGH"
+        },
+        "timestamp": "2026-04-08T21:04:29.572593+00:00"
+    },
+    {
+        "attributes": {
+            "Humidity": 42.68922302108431
+        },
+        "kind": "weather",
+        "temp_c": 12.632191221000882,
+        "timestamp": "2026-04-06T14:56:29.572626+00:00",
+        "version": 1.5,
+        "id": "22f2229d-5b64-462d-9957-5d34b52dd6b2"
+    },
+    {
+        "PAYLOAD": {
+            "cat": "pothole",
+            "Desc": "Incident reported by legacy device"
+        },
+        "Timestamp": "2026-04-08T15:35:29.572659+00:00",
+        "SCHEMA_VER": "1.0",
+        "Type": "REPORT",
+        "id": "b31fa3b6-1082-425d-aa31-99e3a0f5c51b"
+    },
+    {
+        "PAYLOAD": {
+            "SPD": 108.07772440168523,
+            "Lne": 1
+        },
+        "type": "TRF",
+        "timestamp": "2026-04-08T08:56:29.572692+00:00",
+        "schema_ver": "1.0",
+        "id": "b53ac16d-7458-4c65-921d-96b2328a0fd9"
+    },
+    {
+        "BODY": {
+            "Type": "WEATHER",
+            "reading": 85.63653095339058
+        },
+        "meta": {
+            "origin": "CELLULAR_TOWER",
+            "priority": "HIGH"
+        },
+        "timestamp": "2026-04-08T11:14:29.572723+00:00",
+        "V": "3.0",
+        "Id": "682e9ff9-ae11-4b05-9a91-28b02d411346"
+    },
+    {
+        "TYPE": "WTH",
+        "ID": "a2ac173f-56e1-46a0-b7b3-c6039e2bda86",
+        "PAYLOAD": {
+            "t": 62.97483840125044,
+            "h": 89.54113792071638
+        },
+        "timestamp": "2026-04-09T04:16:29.572755+00:00",
+        "schema_ver": "1.0"
+    },
+    {
+        "Payload": {
+            "cat": "street_clean",
+            "Desc": "Incident reported by legacy device"
+        },
+        "Type": "REPORT",
+        "schema_ver": "1.0",
+        "id": "ddca759d-e008-4143-9fc1-dc6af7a7ca51",
+        "timestamp": "2026-04-08T12:36:29.572785+00:00"
+    },
+    {
+        "data": {
+            "temperature": 22.342377647740022,
+            "humidity": 115.32238327513869
+        },
+        "id": "b99c0f37-3a25-449f-89c2-8828b186aa98",
+        "timestamp": "2026-04-09T10:35:29.572816+00:00",
+        "Eventtype": "WEATHER",
+        "schemaversion": "2.0"
+    },
+    {
+        "timestamp": "2026-04-07T08:05:29.572847+00:00",
+        "ID": "944512d9-7225-4c4d-971c-3dae57e283a7",
+        "TYPE": "WTH",
+        "Payload": {
+            "t": 56.61727316141581,
+            "H": 10.01073618734809
+        },
+        "SCHEMA_VER": "1.0"
+    },
+    {
+        "V": "3.0",
+        "timestamp": "2026-04-07T00:29:29.572878+00:00",
+        "body": {
+            "type": "WEATHER",
+            "READING": 60.786813990386
+        },
+        "Id": "8d77c1fd-a387-4885-9cf9-d37995a6f4dd",
+        "meta": {
+            "origin": "CELLULAR_TOWER",
+            "priority": "HIGH"
+        }
+    },
+    {
+        "timestamp": "2026-04-08T23:33:29.572909+00:00",
+        "SCHEMAVERSION": "2.1",
+        "ID": "757f9f05-4ac1-4b18-9b14-0ec84d25b776",
+        "Eventtype": "WEATHER",
+        "Data": {
+            "val": 11.43450779953928
+        },
+        "diagnostic": {
+            "battery": 60,
+            "signal": "STRONG"
+        }
+    },
+    {
+        "BODY": {
+            "type": "REPORT",
+            "reading": 70.98036901322955
+        },
+        "TIMESTAMP": "2026-04-06T14:49:29.572941+00:00",
+        "v": "3.0",
+        "META": {
+            "origin": "CELLULAR_TOWER",
+            "PRIORITY": "HIGH"
+        },
+        "ID": "707f233f-41f9-481b-9cd1-e6bdec97ffef"
+    },
+    {
+        "eventType": "TRAFFIC",
+        "schemaversion": "2.0",
+        "timestamp": "2026-04-07T12:07:29.572999+00:00",
+        "ID": "dd44a5c3-c777-4e87-8c96-21bb93c98d3d",
+        "DATA": {
+            "SPEEDKMH": 40.01337959618799,
+            "lane": 2
+        }
+    },
+    {
+        "Meta": {
+            "origin": "CELLULAR_TOWER",
+            "Priority": "HIGH"
+        },
+        "id": "80CBF713-BC07-4B70-9DC3-BB23405395A7",
+        "TIMESTAMP": "2026-04-09T04:45:29.573056+00:00",
+        "V": "3.0",
+        "Body": {
+            "type": "REPORT",
+            "reading": 64.91676795458383
+        }
+    },
+    {
+        "SCHEMA_VER": "1.0",
+        "type": "TRF",
+        "ID": "47148725-A1CD-4795-B953-5CC5762BD091",
+        "TIMESTAMP": "2026-04-08T21:43:29.573091+00:00",
+        "PAYLOAD": {
+            "SPD": 69.89246104557127,
+            "lne": 1
+        }
+    },
+    {
+        "id": "5a72118b-1256-4ec4-b9d5-a74a53c08b2e",
+        "eventType": "REPORT",
+        "Data": {
+            "Category": "TRAFFIC_LIGHT",
+            "status": "BROKEN"
+        },
+        "Schemaversion": "2.0",
+        "timestamp": "2026-04-08T10:51:29.573123+00:00"
+    },
+    {
+        "timestamp": "2026-04-07T12:01:29.573154+00:00",
+        "Attributes": {
+            "severity": "Low",
+            "Area": "North"
+        },
+        "category": "STREET_CLEAN",
+        "VERSION": 1.5,
+        "kind": "report",
+        "id": "5776bcba-12e2-47f4-98ab-2ce20fe8b50a"
+    },
+    {
+        "V": "3.0",
+        "TIMESTAMP": "2026-04-06T22:36:29.573189+00:00",
+        "ID": "a5aa0cf1-10d1-4547-9a21-defbc13c39d2",
+        "meta": {
+            "origin": "CELLULAR_TOWER",
+            "Priority": "HIGH"
+        },
+        "body": {
+            "TYPE": "REPORT",
+            "reading": 85.66236643210723
+        }
+    },
+    {
+        "Body": {
+            "Type": "REPORT",
+            "reading": 25.696907266536087
+        },
+        "meta": {
+            "origin": "CELLULAR_TOWER",
+            "PRIORITY": "HIGH"
+        },
+        "v": "3.0",
+        "id": "492C9F76-11B4-40B7-B1E1-093EA2C4664B",
+        "timestamp": "2026-04-07T21:26:29.573223+00:00"
+    },
+    {
+        "ID": "b1bd0802-2c6b-403c-af6f-75499b10edb2",
+        "Body": {
+            "TYPE": "WEATHER",
+            "reading": 41.294564710648544
+        },
+        "timestamp": "2026-04-08T18:20:29.573255+00:00",
+        "v": "3.0",
+        "META": {
+            "origin": "CELLULAR_TOWER",
+            "PRIORITY": "HIGH"
+        }
+    },
+    {
+        "Timestamp": "2026-04-08T23:57:29.573289+00:00",
+        "data": {
+            "category": "TRAFFIC_LIGHT",
+            "status": "BROKEN"
+        },
+        "schemaversion": "2.0",
+        "Id": "659b1ff0-4322-4ee3-9d32-2f5b4d93a85e",
+        "Eventtype": "REPORT"
+    },
+    {
+        "data": {
+            "VAL": 27.62791598881552
+        },
+        "Diagnostic": {
+            "battery": 10,
+            "signal": "STRONG"
+        },
+        "schemaversion": "2.1",
+        "EVENTTYPE": "WEATHER",
+        "id": "151d5141-7161-403c-96fa-72d401104927",
+        "TIMESTAMP": "2026-04-07T00:38:29.573319+00:00"
+    },
+    {
+        "Meta": {
+            "origin": "CELLULAR_TOWER",
+            "priority": "HIGH"
+        },
+        "v": "3.0",
+        "body": {
+            "type": "WEATHER",
+            "READING": 31.952147105750967
+        },
+        "timestamp": "2026-04-08T23:44:29.573350+00:00",
+        "Id": "9A6F50B4-CFA5-413E-9EAA-5F1D3C431527"
+    },
+    {
+        "TYPE": "REPORT",
+        "schema_ver": "1.0",
+        "payload": {
+            "Cat": "street_clean",
+            "Desc": "Incident reported by legacy device"
+        },
+        "Id": "c28f7c20-cd1f-4e7e-aa97-39fb2ee43424",
+        "Timestamp": "2026-04-09T10:13:29.573381+00:00"
+    },
+    {
+        "TIMESTAMP": "2026-04-07T09:05:29.573412+00:00",
+        "DATA": {
+            "val": 39.51091672754101
+        },
+        "schemaversion": "2.1",
+        "Diagnostic": {
+            "battery": 18,
+            "signal": "STRONG"
+        },
+        "ID": "451147d8-44bc-4266-b46b-33fcf1bff35a",
+        "eventType": "WEATHER"
+    },
+    {
+        "timestamp": "2026-04-09T11:06:29.573442+00:00",
+        "Schemaversion": "2.0",
+        "data": {
+            "Temperature": 12.39959579277912,
+            "HUMIDITY": 123.34358961577868
+        },
+        "Id": "01df121c-a2b7-4fb1-af7b-e600659a20b5",
+        "Eventtype": "WEATHER"
+    },
+    {
+        "temp_c": 20.815311619238962,
+        "kind": "weather",
+        "timestamp": "2026-04-07T12:33:29.573474+00:00",
+        "Id": "7b2500d7-3dab-4ad3-91bf-9dfc21e1de50",
+        "version": 1.5,
+        "ATTRIBUTES": {
+            "Humidity": 14.078919660632373
+        }
+    },
+    {
+        "timestamp": "2026-04-08T02:55:29.573505+00:00",
+        "Meta": {
+            "ORIGIN": "CELLULAR_TOWER",
+            "priority": "HIGH"
+        },
+        "id": "a94b478e-2e12-4cf4-90b5-2eabc9b642d5",
+        "body": {
+            "Type": "WEATHER",
+            "reading": 93.37897368901533
+        },
+        "v": "3.0"
+    },
+    {
+        "SCHEMAVERSION": "2.0",
+        "data": {
+            "category": "TRAFFIC_LIGHT",
+            "Status": "BROKEN"
+        },
+        "Id": "5fe618b3-45ab-444b-864c-eaecb98c7071",
+        "Timestamp": "2026-04-07T12:24:29.573537+00:00",
+        "eventtype": "REPORT"
+    },
+    {
+        "v": "3.0",
+        "body": {
+            "TYPE": "WEATHER",
+            "reading": 55.36930095754973
+        },
+        "timestamp": "2026-04-07T05:39:29.573565+00:00",
+        "id": "2772f8a6-8215-4690-b92b-ac5cd89629b4",
+        "META": {
+            "origin": "CELLULAR_TOWER",
+            "PRIORITY": "HIGH"
+        }
+    },
+    {
+        "timestamp": "2026-04-07T14:06:29.573594+00:00",
+        "schemaversion": "2.0",
+        "Data": {
+            "category": "TRAFFIC_LIGHT",
+            "status": "BROKEN"
+        },
+        "Id": "87050fa0-dcfb-4833-9b55-cf76ed11c210",
+        "eventType": "REPORT"
+    },
+    {
+        "timestamp": "2026-04-08T06:32:29.573621+00:00",
+        "Body": {
+            "type": "WEATHER",
+            "reading": 65.08302694327807
+        },
+        "v": "3.0",
+        "id": "8a93749e-203c-43d6-81f6-28f3b814b16f",
+        "META": {
+            "Origin": "CELLULAR_TOWER",
+            "priority": "HIGH"
+        }
+    },
+    {
+        "Body": {
+            "TYPE": "TRAFFIC",
+            "READING": 62.168463306460254
+        },
+        "META": {
+            "ORIGIN": "CELLULAR_TOWER",
+            "Priority": "HIGH"
+        },
+        "id": "d9e9c8eb-471f-4ce4-94fd-2676e39f4214",
+        "v": "3.0",
+        "TIMESTAMP": "2026-04-09T11:05:29.573651+00:00"
+    },
+    {
+        "velocity": 96.92306216718168,
+        "kind": "traffic",
+        "attributes": {
+            "Lane_id": "L-4"
+        },
+        "id": "4b747c84-7cc7-477c-8d11-2e11fd3bdc57",
+        "timestamp": "2026-04-08T03:03:29.573680+00:00",
+        "VERSION": 1.5
+    },
+    {
+        "TIMESTAMP": "2026-04-06T06:18:29.573714+00:00",
+        "META": {
+            "origin": "CELLULAR_TOWER",
+            "priority": "HIGH"
+        },
+        "V": "3.0",
+        "id": "B16426D5-AB74-4801-B94C-7F7FC26C2CC3",
+        "body": {
+            "type": "WEATHER",
+            "reading": 85.73379450894016
+        }
+    },
+    {
+        "diagnostic": {
+            "battery": 47,
+            "signal": "STRONG"
+        },
+        "eventtype": "TRAFFIC",
+        "data": {
+            "speedKmh": 45.156998025685176,
+            "lane": 4
+        },
+        "SCHEMAVERSION": "2.1",
+        "TIMESTAMP": "2026-04-08T02:09:29.573746+00:00",
+        "ID": "bf4950db-99ff-44e9-b97d-ff57e8ab73c2"
+    },
+    {
+        "schemaVersion": "2.0",
+        "eventtype": "REPORT",
+        "Id": "ca8fbcb4-a68a-43f2-baf4-e06123e1d525",
+        "Data": {
+            "CATEGORY": "TRAFFIC_LIGHT",
+            "Status": "BROKEN"
+        },
+        "Timestamp": "2026-04-06T12:49:29.573780+00:00"
+    },
+    {
+        "Id": "e3a5ddd5-be61-465e-801e-1c0ee4fe154f",
+        "timestamp": "2026-04-08T21:00:29.573811+00:00",
+        "type": "WTH",
+        "PAYLOAD": {
+            "T": 94.19286708916238,
+            "H": 23.985780052292903
+        },
+        "Schema_ver": "1.0"
+    },
+    {
+        "Timestamp": "2026-04-07T16:42:29.573842+00:00",
+        "ID": "46fb9bc9-365e-4099-8e79-d3b814390881",
+        "KIND": "report",
+        "VERSION": 1.5,
+        "Category": "STREET_CLEAN",
+        "ATTRIBUTES": {
+            "SEVERITY": "Medium",
+            "area": "North"
+        }
+    },
+    {
+        "Timestamp": "2026-04-06T05:13:29.573874+00:00",
+        "ID": "dbca23bd-f70e-46c4-bb27-d08d31ea5918",
+        "Type": "REPORT",
+        "Payload": {
+            "CAT": "traffic_light",
+            "DESC": "Incident reported by legacy device"
+        },
+        "schema_ver": "1.0"
+    },
+    {
+        "Kind": "weather",
+        "id": "6022f466-2f4b-4273-a0ab-2232145838e1",
+        "Version": 1.5,
+        "attributes": {
+            "HUMIDITY": 44.303204929915076
+        },
+        "Timestamp": "2026-04-08T08:01:29.573903+00:00",
+        "temp_c": 14.410003609814385
+    },
+    {
+        "BODY": {
+            "type": "REPORT",
+            "READING": 94.50089649359994
+        },
+        "timestamp": "2026-04-07T16:55:29.573934+00:00",
+        "v": "3.0",
+        "id": "955eeb79-b108-484f-bf09-40ab064a3b1c",
+        "Meta": {
+            "origin": "CELLULAR_TOWER",
+            "PRIORITY": "HIGH"
+        }
+    },
+    {
+        "BODY": {
+            "Type": "REPORT",
+            "reading": 44.65614952326655
+        },
+        "meta": {
+            "origin": "CELLULAR_TOWER",
+            "priority": "HIGH"
+        },
+        "ID": "90a6952f-0e56-4737-b24b-420045f9d601",
+        "V": "3.0",
+        "Timestamp": "2026-04-08T12:05:29.573964+00:00"
+    },
+    {
+        "meta": {
+            "ORIGIN": "CELLULAR_TOWER",
+            "priority": "HIGH"
+        },
+        "body": {
+            "Type": "REPORT",
+            "READING": 43.18523906502616
+        },
+        "id": "c03964e8-ff32-42d9-bc22-8410ec1ffdbe",
+        "timestamp": "2026-04-06T16:59:29.574045+00:00",
+        "v": "3.0"
+    },
+    {
+        "Eventtype": "WEATHER",
+        "DATA": {
+            "TEMPERATURE": 19.217150693960033,
+            "humidity": 42.18330642974453
+        },
+        "timestamp": "2026-04-07T04:51:29.574082+00:00",
+        "id": "88e5d80f-f477-4bdf-937c-499735dad049",
+        "Schemaversion": "2.0"
+    },
+    {
+        "attributes": {
+            "severity": "High",
+            "area": "North"
+        },
+        "VERSION": 1.5,
+        "TIMESTAMP": "2026-04-09T12:00:29.574113+00:00",
+        "category": "Pothole",
+        "id": "f0130afd-e02d-4087-972d-c888552932f4",
+        "Kind": "report"
+    },
+    {
+        "meta": {
+            "ORIGIN": "CELLULAR_TOWER",
+            "Priority": "HIGH"
+        },
+        "v": "3.0",
+        "body": {
+            "Type": "TRAFFIC",
+            "reading": 32.135405116609036
+        },
+        "timestamp": "2026-04-08T10:20:29.574146+00:00",
+        "id": "e4902653-3033-4fc8-abeb-604c42c78f46"
+    },
+    {
+        "id": "BF4C11E3-EF6F-4BD2-89F6-B9890274650B",
+        "TIMESTAMP": "2026-04-08T22:04:29.574178+00:00",
+        "diagnostic": {
+            "battery": 16,
+            "signal": "STRONG"
+        },
+        "Data": {
+            "val": 26.285255462088003
+        },
+        "SCHEMAVERSION": "2.1",
+        "eventType": "WEATHER"
+    },
+    {
+        "timestamp": "2026-04-08T05:51:29.574211+00:00",
+        "kind": "report",
+        "version": 1.5,
+        "id": "8d762d7d-829d-4815-b3ee-3550df07062f",
+        "ATTRIBUTES": {
+            "severity": "Low",
+            "Area": "North"
+        },
+        "Category": "Pothole"
+    },
+    {
+        "schemaversion": "2.0",
+        "Eventtype": "REPORT",
+        "TIMESTAMP": "2026-04-06T07:47:29.574245+00:00",
+        "Id": "50b0f510-6271-46fe-8c24-df29c28f2c94",
+        "Data": {
+            "category": "TRAFFIC_LIGHT",
+            "status": "BROKEN"
+        }
+    },
+    {
+        "TIMESTAMP": "2026-04-07T07:37:29.574275+00:00",
+        "Schemaversion": "2.1",
+        "Data": {
+            "VAL": 22.352390827680715
+        },
+        "EVENTTYPE": "WEATHER",
+        "ID": "4661d619-f906-4242-aff0-41021655f138",
+        "DIAGNOSTIC": {
+            "battery": 8,
+            "signal": "STRONG"
+        }
+    },
+    {
+        "DIAGNOSTIC": {
+            "battery": 7,
+            "signal": "STRONG"
+        },
+        "Eventtype": "TRAFFIC",
+        "Id": "cd12931a-a51a-4d95-958f-d5622c7b2291",
+        "timestamp": "2026-04-06T08:18:29.574310+00:00",
+        "Data": {
+            "SPEEDKMH": 24.452160683158276,
+            "LANE": 4
+        },
+        "schemaversion": "2.1"
+    },
+    {
+        "eventType": "WEATHER",
+        "Schemaversion": "2.0",
+        "Timestamp": "2026-04-07T13:28:29.574344+00:00",
+        "data": {
+            "TEMPERATURE": 22.48082827636952,
+            "humidity": 46.5910968430126
+        },
+        "id": "4a81208f-acc4-44d6-b366-cadf6147ca20"
+    },
+    {
+        "attributes": {
+            "SEVERITY": "High",
+            "area": "North"
+        },
+        "TIMESTAMP": "2026-04-09T05:38:29.574377+00:00",
+        "kind": "report",
+        "VERSION": 1.5,
+        "id": "9fab8fa5-c3f2-4492-8199-91179b9d068c",
+        "CATEGORY": "STREET_CLEAN"
+    },
+    {
+        "ATTRIBUTES": {
+            "LANE_ID": "L-4"
+        },
+        "VELOCITY": 89.87568267387277,
+        "Version": 1.5,
+        "kind": "traffic",
+        "id": "9fae2c21-c09d-4407-9f0c-09ad661d796a",
+        "timestamp": "2026-04-06T18:27:29.574411+00:00"
+    },
+    {
+        "timestamp": "2026-04-06T15:09:29.574446+00:00",
+        "id": "d2324e2c-da52-47f8-b303-49ca3af4bec3",
+        "Schema_ver": "1.0",
+        "Payload": {
+            "cat": "pothole",
+            "DESC": "Incident reported by legacy device"
+        },
+        "type": "REPORT"
+    },
+    {
+        "Data": {
+            "val": 38.88771829127353
+        },
+        "schemaVersion": "2.1",
+        "id": "6f103058-11e8-43ef-bcff-ce0ddefae5e7",
+        "Diagnostic": {
+            "battery": 10,
+            "signal": "STRONG"
+        },
+        "TIMESTAMP": "2026-04-09T07:43:29.574482+00:00",
+        "eventtype": "WEATHER"
+    },
+    {
+        "data": {
+            "VAL": 13.127128132221518
+        },
+        "schemaversion": "2.1",
+        "DIAGNOSTIC": {
+            "battery": 53,
+            "signal": "STRONG"
+        },
+        "eventType": "REPORT",
+        "Timestamp": "2026-04-07T15:04:29.574515+00:00",
+        "id": "ac7b36cb-483f-49d7-9ddb-87d9c5ec308b"
+    },
+    {
+        "Velocity": 128.6065526032735,
+        "kind": "traffic",
+        "attributes": {
+            "lane_id": "L-2"
+        },
+        "Id": "cf1bf106-8e20-43ec-88f4-15825dae392d",
+        "Version": 1.5,
+        "timestamp": "2026-04-09T09:29:29.574550+00:00"
+    },
+    {
+        "Data": {
+            "TEMPERATURE": 44.8062186943413,
+            "humidity": 60.51131973748791
+        },
+        "Eventtype": "WEATHER",
+        "schemaversion": "2.0",
+        "Timestamp": "2026-04-07T06:10:29.574584+00:00",
+        "id": "1b977839-1af1-43a4-8599-86aab5d4cd47"
+    },
+    {
+        "temp_c": 25.70795675137989,
+        "version": 1.5,
+        "TIMESTAMP": "2026-04-09T05:48:29.574615+00:00",
+        "attributes": {
+            "HUMIDITY": 63.011713533077526
+        },
+        "Id": "B9B5E629-C8A4-4B4D-8DE1-793887673559",
+        "KIND": "weather"
+    },
+    {
+        "v": "3.0",
+        "timestamp": "2026-04-09T10:29:29.574647+00:00",
+        "meta": {
+            "origin": "CELLULAR_TOWER",
+            "priority": "HIGH"
+        },
+        "id": "6633a0dc-1fdc-4f83-9b84-0fa0653385a9",
+        "body": {
+            "Type": "TRAFFIC",
+            "READING": 23.655718838488962
+        }
+    },
+    {
+        "Id": "560066f0-f361-4ef7-86e2-226ccec053e0",
+        "BODY": {
+            "type": "WEATHER",
+            "Reading": 22.2420600597603
+        },
+        "Meta": {
+            "origin": "CELLULAR_TOWER",
+            "Priority": "HIGH"
+        },
+        "V": "3.0",
+        "Timestamp": "2026-04-08T18:05:29.574679+00:00"
+    },
+    {
+        "Timestamp": "2026-04-06T21:41:29.574710+00:00",
+        "data": {
+            "temperature": 42.26139919669453,
+            "humidity": 107.03263244653905
+        },
+        "ID": "6bec3116-c669-402c-bf9e-14d11714dcb9",
+        "Schemaversion": "2.0",
+        "eventtype": "WEATHER"
+    },
+    {
+        "Kind": "traffic",
+        "Version": 1.5,
+        "timestamp": "2026-04-08T21:27:29.574741+00:00",
+        "id": "067ab0b3-a9c4-44a0-aa90-9587cb93db71",
+        "Velocity": 33.69863979391571,
+        "ATTRIBUTES": {
+            "lane_id": "L-2"
+        }
+    },
+    {
+        "TYPE": "WTH",
+        "timestamp": "2026-04-09T03:42:29.574777+00:00",
+        "Payload": {
+            "t": 107.17017839288548,
+            "H": 79.1834326179856
+        },
+        "ID": "eda9057b-0284-482b-af9e-f35341710ee3",
+        "Schema_ver": "1.0"
+    },
+    {
+        "Timestamp": "2026-04-07T09:28:29.574808+00:00",
+        "Data": {
+            "CATEGORY": "TRAFFIC_LIGHT",
+            "Status": "BROKEN"
+        },
+        "Schemaversion": "2.0",
+        "eventtype": "REPORT",
+        "ID": "47e23e51-c0b7-4654-ab75-3be46df709f1"
+    },
+    {
+        "id": "423c6227-0e9d-4d88-bb56-8cb90648615c",
+        "DATA": {
+            "Speedkmh": 100.4251553820841,
+            "LANE": 1
+        },
+        "timestamp": "2026-04-07T10:06:29.574838+00:00",
+        "eventType": "TRAFFIC",
+        "schemaversion": "2.0"
+    },
+    {
+        "PAYLOAD": {
+            "CAT": "pothole",
+            "Desc": "Incident reported by legacy device"
+        },
+        "Timestamp": "2026-04-07T07:24:29.574869+00:00",
+        "type": "REPORT",
+        "schema_ver": "1.0",
+        "id": "29fc1b20-2e2c-4c1b-978b-0d1ff6b15a3e"
+    },
+    {
+        "DATA": {
+            "temperature": 18.223594495396767,
+            "humidity": 85.87528557538631
+        },
+        "timestamp": "2026-04-07T14:38:29.574900+00:00",
+        "ID": "74a8e31b-ed81-4091-b808-04d2d165f902",
+        "schemaVersion": "2.0",
+        "eventtype": "WEATHER"
+    },
+    {
+        "version": 1.5,
+        "id": "501f3f7f-bd9a-4a06-aa53-ebc74281ee19",
+        "Velocity": 45.284682198861375,
+        "kind": "traffic",
+        "attributes": {
+            "LANE_ID": "L-1"
+        },
+        "TIMESTAMP": "2026-04-06T10:11:29.574931+00:00"
+    },
+    {
+        "VERSION": 1.5,
+        "velocity": 26.28646358875433,
+        "Attributes": {
+            "LANE_ID": "L-1"
+        },
+        "Kind": "traffic",
+        "timestamp": "2026-04-09T11:07:29.574966+00:00",
+        "id": "3f513d40-6a78-4b79-b794-476be0e4b688"
+    },
+    {
+        "Timestamp": "2026-04-06T20:12:29.575046+00:00",
+        "Eventtype": "WEATHER",
+        "data": {
+            "temperature": 26.66752782971941,
+            "humidity": 58.66082794158592
+        },
+        "id": "2d366351-005c-4fbe-a8b2-86f0df7abe91",
+        "SCHEMAVERSION": "2.0"
+    },
+    {
+        "Timestamp": "2026-04-09T10:24:29.575082+00:00",
+        "Id": "86e1ea18-23c1-4c07-913c-34ff1652509b",
+        "V": "3.0",
+        "meta": {
+            "ORIGIN": "CELLULAR_TOWER",
+            "PRIORITY": "HIGH"
+        },
+        "body": {
+            "type": "WEATHER",
+            "Reading": 36.832681744243715
+        }
+    },
+    {
+        "Diagnostic": {
+            "battery": 11,
+            "signal": "STRONG"
+        },
+        "DATA": {
+            "Speedkmh": 121.52863090697525,
+            "lane": 3
+        },
+        "TIMESTAMP": "2026-04-06T16:04:29.575116+00:00",
+        "Eventtype": "TRAFFIC",
+        "Id": "7eb90bb9-986c-4631-9cfb-23ef7f38f06c",
+        "SCHEMAVERSION": "2.1"
+    },
+    {
+        "PAYLOAD": {
+            "CAT": "traffic_light",
+            "DESC": "Incident reported by legacy device"
+        },
+        "id": "ecd179ef-3d43-4fb7-a044-120d6447d6a4",
+        "TYPE": "REPORT",
+        "timestamp": "2026-04-09T07:46:29.575152+00:00",
+        "SCHEMA_VER": "1.0"
+    },
+    {
+        "Type": "REPORT",
+        "PAYLOAD": {
+            "Cat": "pothole",
+            "desc": "Incident reported by legacy device"
+        },
+        "ID": "79870932-7BA1-4F42-8956-0FD412FCCFFC",
+        "Schema_ver": "1.0",
+        "Timestamp": "2026-04-07T20:22:29.575182+00:00"
+    },
+    {
+        "Type": "TRF",
+        "Schema_ver": "1.0",
+        "payload": {
+            "SPD": 52.68195229305044,
+            "Lne": 1
+        },
+        "timestamp": "2026-04-07T12:15:29.575213+00:00",
+        "id": "7785967e-0923-4881-b5da-b8f30827260f"
+    },
+    {
+        "body": {
+            "Type": "REPORT",
+            "reading": 68.77665246832589
+        },
+        "ID": "5683a31d-3020-4747-b572-0af5d4538477",
+        "TIMESTAMP": "2026-04-08T12:49:29.575245+00:00",
+        "meta": {
+            "origin": "CELLULAR_TOWER",
+            "priority": "HIGH"
+        },
+        "v": "3.0"
+    },
+    {
+        "TIMESTAMP": "2026-04-09T11:18:29.575278+00:00",
+        "schemaVersion": "2.0",
+        "data": {
+            "Category": "TRAFFIC_LIGHT",
+            "status": "BROKEN"
+        },
+        "eventType": "REPORT",
+        "Id": "9C12AB51-1A14-499A-8612-4F782FBEBB49"
+    },
+    {
+        "EVENTTYPE": "WEATHER",
+        "Timestamp": "2026-04-07T14:33:29.575312+00:00",
+        "Id": "24c172a6-d0ba-49da-8793-fcf730bb4782",
+        "SCHEMAVERSION": "2.1",
+        "data": {
+            "Val": 23.435768951692232
+        },
+        "DIAGNOSTIC": {
+            "battery": 3,
+            "signal": "STRONG"
+        }
+    }
+]
