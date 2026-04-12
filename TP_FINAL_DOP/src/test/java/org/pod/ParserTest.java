@@ -11,6 +11,7 @@ import org.pod.schemas.RawEvent;
 import org.pod.schemas.RawEventDeserializer;
 import org.pod.schemas.RawEventV1;
 import org.pod.schemas.RawEventV15;
+import org.pod.schemas.RawEventV2;
 import org.junit.jupiter.api.Test;
 
 import java.time.Instant;
@@ -120,5 +121,52 @@ class ParserTest {
                 """;
 
         assertThrows(IllegalArgumentException.class, () -> rawEventMapper().readValue(json, RawEvent.class));
+    }
+
+    @Test
+    void testDeserializerDetectsSchemaKeyIgnoringCase() throws Exception {
+        String json = """
+                {
+                  "id": "v2-case",
+                  "TimeStamp": "2026-03-15T00:00:00Z",
+                  "SCHEMAVERSION": "2.0",
+                  "eventType": "TRAFFIC",
+                  "data": {
+                    "speedKmh": 81.0,
+                    "lane": 1,
+                    "temperature": null,
+                    "humidity": null,
+                    "category": null,
+                    "status": null
+                  }
+                }
+                """;
+
+        RawEvent event = rawEventMapper().readValue(json, RawEvent.class);
+        assertInstanceOf(RawEventV2.class, event);
+    }
+
+    @Test
+    void testDeserializerAcceptsTimestampWithSpaceSeparator() throws Exception {
+        String json = """
+                {
+                  "id": "v15-time-1",
+                  "timestamp": "2026-03-15 00:00:00",
+                  "version": 1.5,
+                  "kind": "TRAFFIC",
+                  "velocity": 60.0,
+                  "temp_c": null,
+                  "category": null,
+                  "attributes": {
+                    "lane_id": "2",
+                    "HUMIDITY": null,
+                    "severity": null,
+                    "area": null
+                  }
+                }
+                """;
+
+        RawEvent event = rawEventMapper().readValue(json, RawEvent.class);
+        assertInstanceOf(RawEventV15.class, event);
     }
 }
